@@ -1,5 +1,5 @@
 
-# 关于 uri 编码
+# 关于 URI 编码
 
 参考文档：http://www.ruanyifeng.com/blog/2010/02/url_encoding.html
 
@@ -21,7 +21,7 @@ decodeURIComponent(); 	// 解码
 
 ```js
 escape('关键词');
-// 返回 "%u5173%u952E%u8BCD"
+// 输出： "%u5173%u952E%u8BCD"
 ```
 
 ### 2. encodeURI()
@@ -32,6 +32,10 @@ escape('关键词');
 ```js
 encodeURI(); 	// 编码
 decodeURI(); 	// 解码
+
+// Demo
+encodeURI('https://www.baidu.com/s?wd=关键词')
+// 输出： https://www.baidu.com/s?wd=%E5%85%B3%E9%94%AE%E8%AF%8D
 ```
 
 ### 3. encodeURIComponent()
@@ -42,5 +46,9 @@ decodeURI(); 	// 解码
 ```js
 encodeURIComponent(); 	// 编码
 decodeURIComponent(); 	// 解码
+
+// Demo
+encodeURIComponent('https://www.baidu.com/s?wd=关键词')
+// 输出： https%3A%2F%2Fwww.baidu.com%2Fs%3Fwd%3D%E5%85%B3%E9%94%AE%E8%AF%8D
 ```
 
