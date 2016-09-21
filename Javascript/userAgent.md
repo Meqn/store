@@ -1,7 +1,7 @@
 # 获取终端设备信息
 
 
-```js
+```javascript
 /**
  * [判断终端设备]
  * @type {Object}
