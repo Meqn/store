@@ -1,6 +1,14 @@
 # 获取终端设备信息
 
 
+### 打印设备 navigator 信息
+
+
+```javascript
+var isAndroid = win.navigator.appVersion.match(/android/gi);
+    var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+```
+
 ```javascript
 /**
  * [判断终端设备]
@@ -31,3 +39,6 @@ var browser = {
     language: (navigator.browserLanguage || navigator.language).toLowerCase()
 }
 ```
+
+
+
