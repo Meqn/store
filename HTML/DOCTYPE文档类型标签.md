@@ -1,5 +1,8 @@
+# 关于DOCTYPE文档类型标签
 
-# 定义和用法
+---
+
+## 定义和用法
 
 `<!DOCTYPE>` 声明必须是 HTML 文档的第一行，位于 `<html>` 标签之前。
 `<!DOCTYPE>` 声明不是 HTML 标签；它是指示 web 浏览器关于页面使用哪个 HTML 版本进行编写的指令。
@@ -14,7 +17,7 @@ HTML5 不基于 SGML，所以不需要引用 DTD。
 
 
 
-# 示例demo
+## 示例demo
 
 ```html
 <!DOCTYPE html>
