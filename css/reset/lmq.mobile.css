@@ -8,12 +8,6 @@
 input::-webkit-input-placeholder{color:#999;}
 input::-moz-input-placeholder{color:#999;}
 input::-ms-input-placeholder{color:#999;}
-
-*:before, *:after {
- 	-webkit-box-sizing: border-box;
- 	-moz-box-sizing: border-box;
- 	box-sizing: border-box;
- }
  
 /*
 button,input,select,textarea{-webkit-appearance:none;} 	// 去除表单默认样式
@@ -22,7 +16,7 @@ button,input,select,textarea{-webkit-appearance:none;} 	// 去除表单默认样
 input::-webkit-input-speech-button {display: none}
 
 // 被点击时产生的边框或半透明灰色背景
-a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+a,button,input{-webkit-tap-highlight-color:rgba(0,0,0,0);}
 
 // 禁止长按时触发系统的菜单
 a, img{-webkit-touch-callout:none}
@@ -40,3 +34,39 @@ body,button,input,select,textarea,optgroup {
     color: #333;
 }
 
+img{
+    vertical-align: middle;
+}
+
+*:before, *:after,
+.g-flex, .g-flex__item,
+.g-cell, .g-cell__bd{
+ 	-webkit-box-sizing: border-box;
+ 	-moz-box-sizing: border-box;
+ 	box-sizing: border-box;
+ }
+
+.g-flex{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.g-flex__item{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.g-cell{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.g-cell__bd{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
