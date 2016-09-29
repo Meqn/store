@@ -81,13 +81,13 @@ table {
 }
 
 /* 去除默认边框 */
-fieldset, img, iframe {
+fieldset, img {
 	border: 0;
 }
 
 /*去掉焦点状态下外边框*/
-:focus, a{outline:none; -moz-outline-style:none;}
-img{border: none; vertical-align: middle;}
+/*:focus, a{outline:none; -moz-outline-style:none;}*/
+
 
 /* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
 ul, ol {
@@ -129,7 +129,6 @@ mark {
  */
 
  hr {
- 	box-sizing: content-box;
  	height: 0;
  	border: none;
  }
@@ -149,7 +148,7 @@ textarea {
     *vertical-align: middle; /* 3 */
 }
 
-/* placeholder 背景色*/
+/* placeholder 颜色*/
 input::-webkit-input-placeholder{color:#999;}
 input::-moz-input-placeholder{color:#999;}
 input::-ms-input-placeholder{color:#999;}
@@ -163,6 +162,23 @@ a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);} 	// 被点击时产
 a, img{-webkit-touch-callout:none} 	// 禁止长按时触发系统的菜单
 html, body{-webkit-user-select:none} 		// 禁止用户选中文本
  */
+
+
+body,button,input,select,textarea{
+	font-family: "Helvetica Neue", "Helvetica", "PingFang SC","Hiragino Sans GB","Microsoft YaHei","\5FAE\8F6F\96C5\9ED1","WenQuanYi Micro Hei", Arial, sans-serif;
+	font-size:12px;
+	line-height:1.5;
+	color:#333;
+}
+
+/*body, button, input, select, textarea {
+  font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
+}*/
+
+
+
+
+
 
 .clearfix:before, .clearfix:after {
   content: "";
@@ -182,25 +198,4 @@ html, body{-webkit-user-select:none} 		// 禁止用户选中文本
 .textwrap, .textwrap td, .textwrap th {
   word-wrap: break-word;
   word-break: break-all;
-}
-
-body,button,input,select,textarea{
-	font-family: "Helvetica Neue", "Helvetica", "PingFang SC","Hiragino Sans GB","Microsoft YaHei","\5FAE\8F6F\96C5\9ED1","WenQuanYi Micro Hei", Arial, sans-serif;
-	font-size:12px;
-	line-height:1.5;
-	color:#333;
-}
-
-/*body, button, input, select, textarea {
-  font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
-}*/
-
-button,
-input,
-select,
-textarea {
-    font-size: 100%; /* 1 */
-    margin: 0; /* 2 */
-    vertical-align: baseline; /* 3 */
-    *vertical-align: middle; /* 3 */
 }
