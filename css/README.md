@@ -5,7 +5,7 @@
 
 TODO：
 - [X]  [CSS概念注解](./概念注解.md)
-- [X]  [样式重置reset.css](./reset/概念注解.md)
+- [X]  [样式重置reset.css](./reset/)
 - [ ]  常用源码
 - [ ]  特效源码
 

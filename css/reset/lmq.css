@@ -175,9 +175,23 @@ body,button,input,select,textarea{
   font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
 }*/
 
+/* 
+html{
+	overflow-x: hidden;
+}
+html,body{
+	height: 100%;
+}
+ */
 
-
-
+/** 超出显示省略号 */
+.ellipsis {
+  white-space: nowrap;
+  /* 1 */
+  text-overflow: ellipsis;
+  /* 2 */
+  overflow: hidden; }
+  
 
 .clearfix:before, .clearfix:after {
   content: "";

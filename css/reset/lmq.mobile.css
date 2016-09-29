@@ -34,6 +34,15 @@ body,button,input,select,textarea,optgroup {
     color: #333;
 }
 
+/* 
+html{
+    overflow-x: hidden;
+}
+html,body{
+    height: 100%;
+}
+ */
+
 img{
     vertical-align: middle;
 }
