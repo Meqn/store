@@ -1,0 +1,206 @@
+/*! reset.css v2.0.1 | update: 2016/08/16 | by lmq(mengqing723@gmail.com) */
+@charset 'utf-8';
+
+/**
+1. div标签默认有margin值吗？有padding值吗？怎么会想到应用div{margin:0; padding:0;}属性呢？真是画蛇添足，多此一举。
+2. dt标签有默认的margin与padding值就是0，这里为什么还要使用呢？
+3. li标签默认有margin值吗？有padding值吗？压根就没有，也不自己测测，还没事找事设置个li{margin:0; padding:0;}属性，真是衰！
+4. code标签是个属于inline水平的元素，居然也扯到margin与padding的重置，真是好笑。
+5. 还有，像form, input, button, textarea这样子的表单元素，有margin值吗？有padding值吗？我真是不解！
+6. fieldset, legend这两个90年代的标签你的网站上使用了吗？使用概率不足1%的标签也拿来重置，我实在无语了。
+7. 还有th，td这些标签，幸好没有写上table与tr标签，否则我一起痛批一段。
+
+body, dl, dd, h1, h2, h3, h4, h5, h6, p, form{margin:0;}   ol,liul{margin:0; padding:0;}
+ */
+
+/**
+ * tmall.com
+ body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0}
+ body,button,input,select,textarea{font:12px/1.5 tahoma,arial,"\5b8b\4f53";*line-height:1.5;-ms-overflow-style:scrollbar}
+ h1,h2,h3,h4,h5,h6{font-size:100%}
+ address,cite,dfn,em,var{font-style:normal}
+ code,kbd,pre,samp{font-family:courier new,courier,monospace}
+ small{font-size:12px}ul,ol{list-style:none}
+ a{text-decoration:none}
+ a:hover{text-decoration:underline}
+ sup{vertical-align:text-top}
+ sub{vertical-align:text-bottom}
+ legend{color:#000}
+ fieldset,img{border:0}
+ button,input,select,textarea{font-size:100%}
+ table{border-collapse:collapse;border-spacing:0}
+
+* taobao.com
+ blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}
+ body,button,input,select,textarea{font:12px/1.5 tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif}
+ h1,h2,h3,h4,h5,h6{font-size:100%}
+ address,cite,dfn,em,var{font-style:normal}
+ code,kbd,pre,samp{font-family:courier new,courier,monospace}
+ small{font-size:12px}
+ ol,ul{list-style:none}
+ a{text-decoration:none}
+ a:hover{text-decoration:underline}
+ sup{vertical-align:text-top}
+ sub{vertical-align:text-bottom}legend{color:#000}
+ fieldset,img{border:0}
+ button,input,select,textarea{font-size:100%}
+ table{border-collapse:collapse;border-spacing:0}
+ */
+
+html {
+	/*** 关闭字体大小自动调整功能 */
+  -ms-text-size-adjust: 100%; /* 3 */
+  -webkit-text-size-adjust: 100%; /* 3 */
+}
+
+/* 重置各个浏览器的内外边距 */
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select
+{margin:0;padding:0}
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {
+	display: block;
+}
+
+
+audio,
+canvas,
+video {
+	display: inline-block; /* 1 */
+	vertical-align: baseline; /* 2 */
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* 去掉各Table cell 的边距并让其边重合 */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 去除默认边框 */
+fieldset, img, iframe {
+	border: 0;
+}
+
+/*去掉焦点状态下外边框*/
+:focus, a{outline:none; -moz-outline-style:none;}
+img{border: none; vertical-align: middle;}
+
+/* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
+ul, ol {
+  list-style: none;
+}
+
+/* 一致的 del 样式 */
+del {
+	text-decoration: line-through;
+}
+/* 统一上标和下标 */
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+}
+:root sub, :root sup {
+	vertical-align: baseline; /* for ie9 and other modern browsers */
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+
+small {
+	font-size: .8em;
+}
+
+/* 标记，类似于手写的荧光笔的作用 */
+mark {
+	background: #ff0;
+	color:#000;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+ hr {
+ 	box-sizing: content-box;
+ 	height: 0;
+ 	border: none;
+ }
+
+*:before, *:after {
+ 	-webkit-box-sizing: border-box;
+ 	-moz-box-sizing: border-box;
+ 	box-sizing: border-box;
+ }
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%; /* 1 */
+    vertical-align: baseline; /* 3 */
+    *vertical-align: middle; /* 3 */
+}
+
+/* placeholder 背景色*/
+input::-webkit-input-placeholder{color:#999;}
+input::-moz-input-placeholder{color:#999;}
+input::-ms-input-placeholder{color:#999;}
+/*
+button,input,select,textarea{-webkit-appearance:none;} 	// 去除表单默认样式
+// 去掉 android 语音输入按钮
+input::-webkit-input-speech-button {display: none}
+
+a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);} 	// 被点击时产生的边框或半透明灰色背景
+
+a, img{-webkit-touch-callout:none} 	// 禁止长按时触发系统的菜单
+html, body{-webkit-user-select:none} 		// 禁止用户选中文本
+ */
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+.clear{clear:both; line-height:0; height:0; font-size:0;}
+
+/* 强制文本换行 */
+.textwrap, .textwrap td, .textwrap th {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+body,button,input,select,textarea{
+	font-family: "Helvetica Neue", "Helvetica", "PingFang SC","Hiragino Sans GB","Microsoft YaHei","\5FAE\8F6F\96C5\9ED1","WenQuanYi Micro Hei", Arial, sans-serif;
+	font-size:12px;
+	line-height:1.5;
+	color:#333;
+}
+
+/*body, button, input, select, textarea {
+  font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans;
+}*/
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%; /* 1 */
+    margin: 0; /* 2 */
+    vertical-align: baseline; /* 3 */
+    *vertical-align: middle; /* 3 */
+}

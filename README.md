@@ -4,7 +4,7 @@
 
 
 TODO：
-- [ ]  常用CSS代码 及 Demo
+- [ ]  常用css代码 及 Demo
 - [ ]  常用JS代码 及 Demo
 - [ ]  常用html代码 及 Demo
 
@@ -14,7 +14,8 @@ TODO：
 
 # CSS
 
-- [X]  [CSS概念注解](./CSS/概念注解.md)
+- [X]  [css概念注解](./css/概念注解.md)
+- [X]  [样式重置reset.css](./css/reset/概念注解.md)
 - [ ]  常用源码
 - [ ]  特效源码
 
