@@ -15,7 +15,7 @@ TODO：
 # CSS
 
 - [X]  [css概念注解](./css/概念注解.md)
-- [X]  [样式重置reset.css](./css/reset/概念注解.md)
+- [X]  [样式重置reset.css](./css/reset/)
 - [ ]  常用源码
 - [ ]  特效源码
 
