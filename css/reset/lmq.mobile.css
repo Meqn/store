@@ -47,6 +47,11 @@ img{
     vertical-align: middle;
 }
 
+/* 默认不显示下划线，保持页面简洁 */
+ins, a {
+    text-decoration: none;
+}
+
 *:before, *:after,
 .g-flex, .g-flex__item,
 .g-cell, .g-cell__bd{
@@ -58,17 +63,20 @@ img{
 .g-flex{
     display: -webkit-box;
     display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-}
+}   
 .g-flex__item{
     -webkit-box-flex: 1;
     -webkit-flex: 1;
+    -ms-flex: 1;
     flex: 1;
 }
 
 .g-cell{
     display: -webkit-box;
     display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     -webkit-align-items: center;
@@ -77,5 +85,6 @@ img{
 .g-cell__bd{
     -webkit-box-flex: 1;
     -webkit-flex: 1;
+    -ms-flex: 1;
     flex: 1;
 }

@@ -212,3 +212,8 @@ html,body{
   word-wrap: break-word;
   word-break: break-all;
 }
+
+/* 默认不显示下划线，保持页面简洁 */
+ins, a {
+    text-decoration: none;
+}
