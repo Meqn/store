@@ -10,6 +10,9 @@
 
 # 默认字体
 
+参考：
+http://moxfive.xyz/2015/12/09/css-font-family/
+http://aaaaaashu.me/shu/
 
 ```css
 // cube 方案
