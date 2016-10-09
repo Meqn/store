@@ -165,4 +165,4 @@ Arial | - | -
 38 | 文泉驿点阵正黑 | WenQuanYi Zen Hei Sharp
 
 
-![字体英文名](http://images.cnitblog.com/blog2015/347002/201503/031529231452046.png)
+![字体英文名](https://raw.githubusercontent.com/mengqing723/codeStore/master/css/reset/font_name.png)
