@@ -1,8 +1,9 @@
-
 /*
 * 引入 normalize.css
 * @import "./normalize";
 */
+@import "./normalize";
+
 
 /* placeholder 颜色*/
 input::-webkit-input-placeholder{color:#999;}
@@ -27,7 +28,7 @@ html, body{-webkit-user-select:none}
  */
 
 
-body,button,input,select,textarea,optgroup {
+body {
     font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
     font-size: 12px;
     line-height: 1.5;

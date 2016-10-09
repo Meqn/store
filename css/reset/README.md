@@ -63,6 +63,8 @@ font-family: 'helvetica neue', arial, 'hiragino sans gb', stheiti, 'wenquanyi mi
 
 // 微信框架weui
 font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+// 微信表达文字样式
+font: 13.3333px Arial;
 ```
 
 
