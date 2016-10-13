@@ -1,5 +1,7 @@
 .idea/
-node_modules/
+node_modules
+*/node_modules/
+*/*/node_modules/
 
 # OS X
 .DS_Store
