@@ -13,6 +13,8 @@
 参考：
 http://moxfive.xyz/2015/12/09/css-font-family/
 http://aaaaaashu.me/shu/
+https://ant.design/docs/spec/font
+
 
 ```css
 // cube 方案
@@ -77,7 +79,7 @@ font: 13.3333px Arial;
 
 **内容字体**
 ```
-"Helvetica Neue", "Helvetica", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", Arial ;
+"Helvetica Neue", "Helvetica", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", Arial, sans-serif;
 ```
 
 **代码字体**
