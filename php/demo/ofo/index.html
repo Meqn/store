@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+*{margin:0;padding:0;border:0; box-sizing: border-box;}
+body{font:14px/1.5 "Helvetica Neue", "Helvetica", "PingFang SC","Hiragino Sans GB","Microsoft YaHei","\5FAE\8F6F\96C5\9ED1","WenQuanYi Micro Hei", Arial, sans-serif; color:#333;}
+.form{margin:20px 5%; padding: 10px; background-color:#fff;}
+.tb{width: 100%; padding: 10px; border: 1px solid #ccc; margin-bottom: 15px;}
+.btn{width: 100%; padding: 10px 0; color:#333; background-color: #ddd;}
+</style>
+</head>
+<body>
+<form action="./data.php" method="POST">
+<div class="form">
+	<p class="form__group">
+		<input type="text" name="bike_num" id="bike_num" class="tb" placeholder="请输入id号" value="">
+	</p>
+	<p class="form__group">
+		<input type="text" name="bike_pwd" id="bike_pwd" class="tb" placeholder="请输入密码" value="">
+	</p>
+	<p>
+		<input type="button" class="btn" id="btn" value="提交">
+	</p>
+</div>
+<ul id="list"></ul>
+</form>
+
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(function() {
+	$('#btn').on('click', function(event) {
+		var $bike_num = $.trim($('#bike_num').val()),
+			$bike_pwd = $.trim($('#bike_pwd').val());
+		if($bike_num === '' || $bike_pwd === '') {
+			alert('请输入完整的信息');return;
+		} else {
+			$.ajax({
+				url: './data.php',
+				type: 'POST',
+				dataType: 'json',
+				data: {bike_num: $bike_num, bike_pwd: $bike_pwd},
+			})
+			.done(function(data) {
+				console.log(data);
+				$('#bike_num, #bike_pwd').val('');
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			
+		}
+	});
+	
+})
+</script>
+</body>
+</html>
