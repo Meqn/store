@@ -6,14 +6,17 @@
 <style>
 *{margin:0;padding:0;border:0; box-sizing: border-box;}
 body{font:14px/1.5 "Helvetica Neue", "Helvetica", "PingFang SC","Hiragino Sans GB","Microsoft YaHei","\5FAE\8F6F\96C5\9ED1","WenQuanYi Micro Hei", Arial, sans-serif; color:#333;}
-.form{margin:20px 5%; padding: 10px; background-color:#fff;}
+.mb20{margin-bottom: 20px;}
+.wrap{margin:20px 5%; padding: 10px; background-color:#fff;}
 .tb{width: 100%; padding: 10px; border: 1px solid #ccc; margin-bottom: 15px;}
 .btn{width: 100%; padding: 10px 0; color:#333; background-color: #ddd;}
 </style>
 </head>
 <body>
+<div class="wrap">
+
 <form action="./data.php" method="POST">
-<div class="form">
+<div class="mb20 add__form">
 	<p class="form__group">
 		<input type="text" name="bike_num" id="bike_num" class="tb" placeholder="请输入id号" value="">
 	</p>
@@ -26,6 +29,19 @@ body{font:14px/1.5 "Helvetica Neue", "Helvetica", "PingFang SC","Hiragino Sans G
 </div>
 <ul id="list"></ul>
 </form>
+
+<form action="">
+<div class="search__form">
+	<p class="form__group">
+		<input type="text" name="search" id="search" class="tb search__tb" placeholder="请输入id号" value="">
+	</p>
+	<p class="form__group">
+		<input type="button" class="btn" id="search__btn" value="搜索">
+	</p>
+</div>
+</form>
+
+</div>
 
 <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 <script>
