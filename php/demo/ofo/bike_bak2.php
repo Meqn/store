@@ -1,7 +1,6 @@
 <?php
 // 设置编码，中文会被编码
-header("Content-Type:application/json; charset=utf8");
-// header("Content-Type:text/html; charset=utf8");
+header("Content-Type:text/html; charset=utf8");
 
 /* JSON demo
 $json_data = array('count'=>2, "results"=>array(
@@ -37,9 +36,7 @@ $bike_pwd = isset($_POST['bike_pwd']) ? htmlentities($_POST['bike_pwd']) : '';
 
 
 if($bike_num === '' || $bike_pwd === '') {
-	header("HTTP/1.1 400 Bad Request");
-	echo '{"status_code": 400, "message": "非法请求"}';
-	exit();
+	// exit('小子，注意你的行为!');
 } else {
 	// 文件路径
 	$filePath = './data.json';
@@ -59,10 +56,7 @@ if($bike_num === '' || $bike_pwd === '') {
 			$arr_pwd = $data['results'][$key]['value'];
 			if(in_array($bike_pwd, $arr_pwd)) {
 				// 新密码已存在
-				// exit('新密码已存在');
-				header("HTTP/1.1 400 Bad Request");
-				echo '{"status_code": 400, "message": "新密码已存在"}';
-				exit();
+				exit('新密码已存在');
 			} else {
 				// 新密码不存在
 				array_push($data['results'][$key]['value'], $bike_pwd); 	// 插入新密码
