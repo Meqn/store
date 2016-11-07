@@ -4,6 +4,8 @@
 * https://gist.github.com/hehongwei44/5ab040cf3a8b27311d72
 * http://fragged.org/preloading-images-using-javascript-the-right-way-and-without-frameworks_744.html
 * http://www.cnblogs.com/v10258/p/3376455.html
+* http://www.qttc.net/201304304.html
+http://www.cnblogs.com/snandy/p/3704218.html
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -31,13 +33,14 @@
 		}
 		img.onload = function() {
 			img.onerror = img.onload = null;
+			console.log('onload');
 			callback(img);
 		}
 		img.src = url;
 	}
 
-	imgLoad('http://mengqing.org/wp-content/demo/img_big.jpg', function(img) {
-		console.log(img);
+	imgLoad('http://mengqing.org/wp-content/demo/aaa11.jpg', function(img) {
+		console.log(img.width);
 		doc.querySelector('#img').appendChild(img);
 		doc.querySelector('#loading').style.display = "none";
 	});

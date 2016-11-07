@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+*{margin: 0;padding: 0;border: 0;}
+#loading{position: absolute; top: 45%; left: 45%; width: 100px; line-height: 30px; text-align: center; font-size: 16px; color: #fff; background: rgba(0,0,0,.7); border-radius: 5px;}
+</style>
+</head>
+<div id="loading">Loading</div>
+<div id="img"></div>
+
+<body>
+<script>
+(function (win, doc) {
+	function imgLoad(url, callback) {
+		var img = new Image();
+		img.onerror = function() {
+			img.onerror = img.onload = null;
+			console.log('error');
+		}
+		img.onload = function() {
+			img.onerror = img.onload = null;
+			callback(img);
+		}
+		img.src = url;
+	}
+
+	imgLoad('http://mengqing.org/wp-content/demo/img_big.jpg', function(img) {
+		console.log(img);
+		doc.querySelector('#img').appendChild(img);
+		doc.querySelector('#loading').style.display = "none";
+	});
+})(window, document);
+</script>
+
+</body>
+
+</html>

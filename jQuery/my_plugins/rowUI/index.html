@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+.table{width:50px; margin:0 25%; border: 1px solid #ccc;}
+.table .evenRow{background: #ccc;}
+.table .oddRow{background: #c00;}
+.table .activeRow{background: #666;}
+
+</style>
+</head>
+<body>
+
+<table class="table">
+	<tr>
+		<td>aaa</td>
+		<td>bbbb</td>
+	</tr>
+	<tr>
+		<td>aaa</td>
+		<td>bbbb</td>
+	</tr>
+	<tr>
+		<td>aaa</td>
+		<td>bbbb</td>
+	</tr>
+	<tr>
+		<td>aaa</td>
+		<td>bbbb</td>
+	</tr>
+	<tr>
+		<td>aaa</td>
+		<td>bbbb</td>
+	</tr>
+</table>
+
+
+<ul class="table list">
+	<li>aaaa</li>
+	<li>aaaa</li>
+	<li>aaaa</li>
+	<li>aaaa</li>
+	<li>aaaa</li>
+</ul>
+
+<script type="text/javascript" src="/demo/src/jquery.min-1.9.1.js"></script>
+<script src="jQuery.rowUI.js"></script>
+<script>
+$(function() {
+	$('.table').rowUI({
+		clickFn: function(){
+			console.log(event.target)
+		}
+	});
+	$('.list').rowUI({
+		el: 'li',
+		clickFn: function(){
+			console.log(event.target)
+		}
+	});
+})
+</script>
+</body>
+</html>
