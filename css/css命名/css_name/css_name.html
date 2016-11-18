@@ -1,0 +1,213 @@
+<!-- 
+源自： http://ximan.github.io/css-name/ 
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0" charset="UTF-8">
+    <title>CSS常用命名</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-style: 14px;
+}
+.clearfix:after{display:block;content:".";height:0;visibility:hidden;clear:both;font-size:0;line-height:0;}
+.clearfix{*zoom:1;}
+a{
+    color: #000;
+    text-decoration: none;
+}
+.wrap{
+    width: 980px;
+    margin: 0 auto;
+}
+.search{
+    background-color: #ff7373;
+    color: #fff;
+}
+.search .wrap{
+    position: relative;
+    width: 940px;
+    padding: 40px 20px;
+}
+.search h1{
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    font-size: 32px;
+}
+.search .desc{
+    float: right;
+}
+.search_box{
+    clear: both;
+    padding-top: 20px;
+}
+.search_box .search_ipt{
+    width: 89%;
+    height: 30px;
+    line-height: 30px;
+    padding: 15px;
+    border: none;
+    font-size: 16px;
+}
+.result{
+    width: 940px;
+    min-height: 400px;
+    padding: 50px 20px;
+}
+.result .item{
+    margin-bottom: 20px;
+}
+.result .item h3{
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    font-size: 24px;
+}
+.result .item .ipt_val{
+    float: left;
+    width: 25%;
+    min-width: 140px;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+.footer{
+    background-color: #ff7373;
+    color: #fff;
+}
+.footer .wrap{
+    line-height: 30px;
+    padding: 20px;
+}
+.footer a{
+    color: #fff;
+}
+
+@media (max-width: 980px){
+    .wrap{
+        width: auto;
+        margin: 0 20px;
+    }
+    .search .wrap{
+        width: auto;
+        padding: 20px 0;
+    }
+    .search h1{
+        float: none;
+    }
+    .result{
+        width: auto;
+        padding: 30px 0;
+    }
+}
+</style>
+</head>
+<body>
+<div class="search">
+    <div class="wrap">
+        <h1>CSS常用命名</h1>
+        <p class="desc">共收集<span class="num">0</span>个词</p>
+        <div class="search_box">
+            <input type="text" class="search_ipt" placeholder="搜索关键字">
+        </div>
+    </div>
+</div>
+<div class="result wrap"></div>
+<div class="footer">
+    <div class="wrap">
+        作者：<a href="http://ons.me/" target="blank">西门</a>
+        <a href="https://github.com/ximan/css-name" target="blank">GitHub</a>
+    </div>
+</div>
+
+<script src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
+<script>
+$(function(){
+    var timer;
+
+    // 插入json数据
+    $.getJSON('css_name_data.json', function(data) {
+        var result = [];
+        var sum = 0;
+
+        // 循环拼接json数据
+        $.each(data, function(key, val) {
+            result += '<div class="item"><h3>' + val.cn + '</h3><div class="clearfix">';
+            sum += val.en.length;
+            for(var i = 0; i < val.en.length; i++){
+                result += '<input class="ipt_val" type="text" onclick="this.select();" readonly="readonly" value="' + val.en[i] + '">';
+            }
+            result += '</div></div>';
+        });
+
+        $('.result').append(result);
+        $('.search .num').text(sum);
+
+        var list = [];
+        var list2 = [];
+        var $h3 = $('.item h3');
+        var $val = $('.ipt_val');
+
+        // 把所有H3标题都加入数组
+        for(var i = 0; i < $h3.length; i++){
+            list.push($h3.eq(i).text());
+        }
+
+        for(var i = 0; i < $val.length; i++){
+            list2.push($val.eq(i).val());
+        }
+
+        // 搜索关键字
+        $('.search_ipt').on('keyup',function(){
+            var flag = false;
+            var val = $(this).val();
+            clearTimeout(timer);
+            timer = setTimeout(function(){
+                // 如果搜索框不为空
+                if(val != ''){
+                    for(var i = 0; i < list.length; i++){
+                        // 循环数组，标题与搜索框里值做匹配
+                        var result = list[i].indexOf(val);
+                        if (result == -1) {
+                            $h3.eq(i).parents('.item').hide();
+                        } else {
+                            $h3.eq(i).parents('.item').show();
+                            flag = true;
+                        }
+                    }
+                    if (!flag) {
+                        for(var j = 0; j < list2.length; j++){
+                            // 循环数组，标题与搜索框里值做匹配
+                            var result = list2[j].indexOf(val);
+                            var parent;
+                            if ($val.eq(j).parents(".item").index(".item") == parent) {
+                                continue;
+                            }
+                            if (result == -1) {
+                                $val.eq(j).parents('.item').hide();
+                            } else {
+                                $val.eq(j).parents('.item').show();
+                                parent = $val.eq(j).parents(".item").index(".item")
+                            }
+                        }
+                    }
+                    
+                }else{
+                    // 全部展示
+                    $('.item').show();
+                }
+            },300);
+        });
+    });
+});
+</script>
+</body>
+</html>

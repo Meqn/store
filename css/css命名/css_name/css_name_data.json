@@ -1,0 +1,361 @@
+[
+    {
+        "cn": "头部",
+        "en": [
+            "head",
+            "header"
+        ]
+    },
+    {
+        "cn": "主体",
+        "en": [
+            "main",
+            "body"
+        ]
+    },
+    {
+        "cn": "底部",
+        "en": [
+            "foot",
+            "footer"
+        ]
+    },
+    {
+        "cn": "容器",
+        "en": [
+            "container",
+            "pack"
+        ]
+    },
+    {
+        "cn": "内容",
+        "en": [
+            "content"
+        ]
+    },
+    {
+        "cn": "包",
+        "en": [
+            "wrap",
+            "package"
+        ]
+    },
+    {
+        "cn": "侧边栏",
+        "en": [
+            "sidebar",
+            "side"
+        ]
+    },
+    {
+        "cn": "菜单",
+        "en": [
+            "menu"
+        ]
+    },
+    {
+        "cn": "子菜单",
+        "en": [
+            "submenu"
+        ]
+    },
+    {
+        "cn": "导航",
+        "en": [
+            "nav",
+            "navigation",
+            "menu"
+        ]
+    },
+    {
+        "cn": "子导航",
+        "en": [
+            "subnav"
+        ]
+    },
+    {
+        "cn": "登录，登陆",
+        "en": [
+            "login",
+            "entry"
+        ]
+    },
+    {
+        "cn": "注册",
+        "en": [
+            "register",
+            "regist"
+        ]
+    },
+    {
+        "cn": "搜索",
+        "en": [
+            "search"
+        ]
+    },
+    {
+        "cn": "文章",
+        "en": [
+            "article"
+        ]
+    },
+    {
+        "cn": "新闻",
+        "en": [
+            "news"
+        ]
+    },
+    {
+        "cn": "列表",
+        "en": [
+            "list"
+        ]
+    },
+    {
+        "cn": "标题",
+        "en": [
+            "title"
+        ]
+    },
+    {
+        "cn": "描述",
+        "en": [
+            "description",
+            "desc"
+        ]
+    },
+    {
+        "cn": "信息",
+        "en": [
+            "information",
+            "info",
+            "message"
+        ]
+    },
+    {
+        "cn": "消息，留言",
+        "en": [
+            "message"
+        ]
+    },
+    {
+        "cn": "项目",
+        "en": [
+            "item",
+            "project"
+        ]
+    },
+    {
+        "cn": "购物车",
+        "en": [
+            "cart",
+            "shop cart"
+        ]
+    },
+    {
+        "cn": "加入",
+        "en": [
+            "join"
+        ]
+    },
+    {
+        "cn": "联系",
+        "en": [
+            "contact"
+        ]
+    },
+    {
+        "cn": "下载",
+        "en": [
+            "download"
+        ]
+    },
+    {
+        "cn": "指南",
+        "en": [
+            "guide"
+        ]
+    },
+    {
+        "cn": "服务",
+        "en": [
+            "service"
+        ]
+    },
+    {
+        "cn": "状态",
+        "en": [
+            "status"
+        ]
+    },
+    {
+        "cn": "价格",
+        "en": [
+            "price"
+        ]
+    },
+    {
+        "cn": "原价",
+        "en": [
+            "original price",
+            "old price",
+            "Initial price"
+        ]
+    },
+    {
+        "cn": "现价，最新价",
+        "en": [
+            "new price",
+            "now price",
+            "last price"
+        ]
+    },
+    {
+        "cn": "折扣",
+        "en": [
+            "discount"
+        ]
+    },
+    {
+        "cn": "标志",
+        "en": [
+            "logo",
+            "sign",
+            "mark"
+        ]
+    },
+    {
+        "cn": "提示",
+        "en": [
+            "msg",
+            "tips",
+            "prompt"
+        ]
+    },
+    {
+        "cn": "推荐",
+        "en": [
+            "recommend"
+        ]
+    },
+    {
+        "cn": "大",
+        "en": [
+            "large",
+            "big"
+        ]
+    },
+    {
+        "cn": "中",
+        "en": [
+            "middle",
+            "medium"
+        ]
+    },
+    {
+        "cn": "小",
+        "en": [
+            "small",
+            "petite"
+        ]
+    },
+    {
+        "cn": "按钮",
+        "en": [
+            "button",
+            "btn"
+        ]
+    },
+    {
+        "cn": "文本框",
+        "en": [
+            "textbox",
+            "ipt"
+        ]
+    },
+    {
+        "cn": "多行文本框",
+        "en": [
+            "textarea"
+        ]
+    },
+    {
+        "cn": "广告",
+        "en": [
+            "advertisement",
+            "ad",
+            "banner"
+        ]
+    },
+    {
+        "cn": "验证码",
+        "en": [
+            "captcha",
+            "verification code"
+        ]
+    },
+    {
+        "cn": "提交",
+        "en": [
+            "submit"
+        ]
+    },
+    {
+        "cn": "滚动",
+        "en": [
+            "scroll",
+            "wheel"
+        ]
+    },
+    {
+        "cn": "标签",
+        "en": [
+            "label",
+            "tag",
+            "tab"
+        ]
+    },
+    {
+        "cn": "投票",
+        "en": [
+            "vote"
+        ]
+    },
+    {
+        "cn": "商标",
+        "en": [
+            "brand"
+        ]
+    },
+    {
+        "cn": "热点",
+        "en": [
+            "hot",
+            "hotspot"
+        ]
+    },
+    {
+        "cn": "友情链接",
+        "en": [
+            "friendlink"
+        ]
+    },
+    {
+        "cn": "版权",
+        "en": [
+            "copyright"
+        ]
+    },
+    {
+        "cn": "加入我们",
+        "en": [
+            "join us"
+        ]
+    },
+    {
+        "cn": "联系我们",
+        "en": [
+            "contact us"
+        ]
+    }
+]
