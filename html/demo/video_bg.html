@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+*{margin: 0; padding: 0; border: 0;}
+html,body{height: 100%;}
+video{position: fixed; top: 50%; left: 50%; min-height: 100%; min-width: 100%; height: auto; width: auto;
+	-webkit-transform: translate3d(-50%, -50%, 0); transform: translate3d(-50%, -50%, 0);}
+.content{height: 2000px; background-color: #ccc; position: relative;}
+</style>
+</head>
+<body>
+<div style="width: 100%; height: 100%;">
+	<video class="video" autoplay="autoplay" poster="https://bj-megvii-prod-asset.oss-cn-beijing.aliyuncs.com/static%2Fimg%2Fvideo.jpg" loop="loop" autobuffer="autobuffer" muted="muted">
+		<source src="https://bj-megvii-prod-asset.oss-cn-beijing.aliyuncs.com/static%2Fvideo%2Fmegvii2.mp4" type="video/mp4">
+		<source src="https://bj-megvii-prod-asset.oss-cn-beijing.aliyuncs.com/static%2Fvideo%2Fmegvii2.webm" type="video/webm">
+		<source src="https://bj-megvii-prod-asset.oss-cn-beijing.aliyuncs.com/static%2Fvideo%2Fmegvii2.ogg" type="video/ogg">
+		Your browser does not support HTML5 video.
+	</video>
+</video>
+</div>
+<div class="content">
+	内容
+</div>
+</body>
+</html>
