@@ -317,7 +317,8 @@
           styles.left = left;
           styles.top = top + height;
       }
-
+      console.log('left: '+ left)
+      console.log('top: '+ (top + height))
       this.$completer.css(styles);
     },
 

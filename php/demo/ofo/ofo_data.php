@@ -42,7 +42,7 @@ if($bike_num === '' || $bike_pwd === '') {
 	exit();
 } else {
 	// 文件路径
-	$filePath = './data.json';
+	$filePath = './ofo_data.json';
 
 	// 判断文件是否存在
 	if(file_exists($filePath)) {

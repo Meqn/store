@@ -3,114 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Document</title>
-<style>
-*{margin:0;padding:0;border:0; box-sizing: border-box;}
-body{font:14px/1.5 "Helvetica Neue", "Helvetica", "PingFang SC","Hiragino Sans GB","Microsoft YaHei","\5FAE\8F6F\96C5\9ED1","WenQuanYi Micro Hei", Arial, sans-serif; color:#333;}
-ul,ol{list-style: none;}
-.mb20{margin-bottom: 20px;}
-.wrap{margin:20px 5%; padding: 10px; background-color:#fff;}
-.tb{width: 100%; padding: 10px; border: 1px solid #ccc; margin-bottom: 15px;}
-.btn{width: 100%; padding: 10px 0; color:#333; background-color: #ddd;}
-.search__res-list{margin-top: 15px;}
-
-/*!
- * Completer v0.1.3
- * https://github.com/fengyuanchen/completer
- *
- * Copyright (c) 2014-2016 Fengyuan Chen
- * Released under the MIT license
- *
- * Date: 2016-06-13T12:43:37.946Z
- */
-
-.completer-container {
-  font-family: inherit;
-  font-size: 14px;
-  line-height: normal;
-
-  position: absolute;
-
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
-
-  border: 1px solid #ccc;
-  border-bottom-color: #39f;
-  background-color: #fff;
-}
-
-.completer-container li {
-  overflow: hidden;
-
-  margin: 0;
-  padding: .5em .8em;
-
-  cursor: pointer;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-
-  border-bottom: 1px solid #eee;
-  background-color: #fff;
-}
-
-.completer-container .completer-selected,
-.completer-container li:hover {
-  margin-left: -1px;
-
-  border-left: 1px solid #39f;
-  background-color: #eee;
-}
-</style>
+<title>ofo单车分享</title>
+<link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <div class="wrap">
+	<nav class="nav">
+		<ul class="g_cell" id="tab">
+			<li class="g_cell_bd cur">查询</li>
+			<li class="g_cell_bd">分享</li>
+		</ul>
+		<i class="line" id="line"></i>
+	</nav>
+	<div class="content" id="content">
+			<!-- // 搜索 -->
+			<div class="form form_search" id="form_search">
+				<form>
+					<p class="form_group">
+						<input type="text" name="search" id="tb_search" class="tb search__tb" placeholder="请输入id号" value="">
+					</p>
+					<p class="form_group">
+						<input type="button" class="btn" id="search__btn" value="搜索">
+					</p>
+					<div class="search_result" id="search_result" style="display: none;"></div>
+				</form>
+			</div>
+			<!-- // 增加 -->
+			<div class="form form_add" id="form_add">
+				<form action="./ofo_data.php" method="POST">
+					<p class="form_group">
+						<input type="text" name="bike_num" id="bike_num" class="tb" placeholder="请输入id号" value="">
+					</p>
+					<p class="form_group">
+						<input type="text" name="bike_pwd" id="bike_pwd" class="tb" placeholder="请输入密码" value="">
+					</p>
+					<p>
+						<input type="button" class="btn" id="btn" value="提交">
+					</p>
+				</form>
+			</div>
+	</div>
 
-<form action="./data.php" method="POST">
-<div class="mb20 add__form">
-	<p class="form__group">
-		<input type="text" name="bike_num" id="bike_num" class="tb" placeholder="请输入id号" value="">
-	</p>
-	<p class="form__group">
-		<input type="text" name="bike_pwd" id="bike_pwd" class="tb" placeholder="请输入密码" value="">
-	</p>
-	<p>
-		<input type="button" class="btn" id="btn" value="提交">
-	</p>
-</div>
-<ul id="list"></ul>
-</form>
 
-<form action="">
-<div class="search__form">
-	<p class="form__group">
-		<input type="text" name="search" id="search" class="tb search__tb" placeholder="请输入id号" value="">
-	</p>
-	<p class="form__group">
-		<input type="button" class="btn" id="search__btn" value="搜索">
-	</p>
-	<ul class="search__res-list" id="search__res-list"></ul>
-</div>
-</form>
 
 </div>
 
 <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
 <script src="./completer/completer.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script>
 $(function() {
+	var $forms = $('#content > .form');
+	$('#tab > li').on('click', function(event) {
+		var index = $(this).index();
+		$('#line').css('webkitTransform', 'translate3d('+ index * 100 +'%, 0, 0)')
+			.css('transform', 'translate3d('+ index * 100 +'%, 0, 0)');
+		$(this).addClass('cur').siblings().removeClass('cur');
+		$forms.hide().eq(index).show();
+	});
 	$('#btn').on('click', function(event) {
 		var $bike_num = $.trim($('#bike_num').val()),
 			$bike_pwd = $.trim($('#bike_pwd').val());
-		if($bike_num === '' || $bike_pwd === '') {
-			alert('请输入完整的信息');return;
+		var regExp = /^\d{4,6}$/;
+		if($bike_num === '' || $bike_pwd === '' || !regExp.test($bike_num) || !regExp.test($bike_pwd)) {
+			alert('请输入正确的信息');return;
 		} else {
 			$.ajax({
-				url: './data.php',
+				url: './ofo_data.php',
 				type: 'POST',
 				dataType: 'json',
 				data: {bike_num: $bike_num, bike_pwd: $bike_pwd},
@@ -135,90 +94,131 @@ $(function() {
 			
 		}
 	});
-
-	/*$('#search__btn').on('click', function(event) {
-		var $bike_num = $.trim($('#search').val());
-		if ($bike_num) {
-			$.ajax({
-				url: './data.json',
-				type: 'GET',
-				dataType: 'json',
-				data: {},
-			})
-			.done(function(data, textStatus, jqXHR) {
-				console.log(data);
-				var res = data.results,
-					resId = [],
-					lists = '';
-				res.forEach(function(v, k) {
-					resId[k] = v.id;
-					if(v.id === $bike_num) {
-						v.value.forEach(function(val, i) {
-							lists += '<li>'+ val +'</li>';
-						});
-					}
-				});
-
-				if(resId.indexOf($bike_num) !== -1) {
-					$('#search__res-list').html(lists);
-				} else {
-					$('#search__res-list').html('不存在');
-				}
-			})
-			.fail(function(jqXHR, textStatus, errorThrown) {
-				alert('网络超时！')
+	setTimeout(function() {complete()}, 500)
+	$('#search__btn').on('click', function(event) {
+		var val = $.trim($('#tb_search').val());
+		if(val) {
+			get(function(data) {
+				var res = data.results;
+				var resId = getkey(res);
+				console.log(resId)
+				getResult(res, getkey(res), val);
+			}, function() {
+				$('#search_result').show().html('<p style="color:#f00;">网络繁忙</p>');
 			});
-			
 		} else {
-			alert('请输入id号');return;
+			alert('请输入id号')
 		}
-	});*/
-	
-	complete();
+	});
+
+	var $url = location.href.split('#')[0];
+	$.ajax({
+		url: '../../wechat/token/signature.php',
+		type: 'GET',
+		dataType: 'json',
+		data: {url: $url},
+    success: function(data) {
+      console.log(data);
+
+      wx.config({
+        debug: false,
+        appId: data.appId,
+        timestamp: data.timestamp,
+        nonceStr: data.nonceStr,
+        signature: data.signature,
+        jsApiList: [
+            'checkJsApi',
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+            'onMenuShareQQ',
+            'onMenuShareWeibo',
+            'onMenuShareQZone'
+        ]
+    });
+    },
+    error: function() {
+      alert('网络繁忙');
+    }
+	})
+	wx.ready(function () {
+	  var shareData = {
+	    title: '请叫我雷锋，不用谢！',
+	    desc: '别告诉别人我是谁？',
+	    link: 'http://www.phonele.com/test/ofo/',
+	    imgUrl: 'http://c.hiphotos.baidu.com/baike/w%3D268%3Bg%3D0/sign=94f5f6add909b3deebbfe36ef4840bbc/622762d0f703918f62576c0f593d269758eec475.jpg',
+	    success: function() {alert('你是个好人！')},
+	    cancel: function() {alert('坏人')}
+	  };
+	  wx.onMenuShareAppMessage(shareData);
+	  wx.onMenuShareTimeline(shareData);
+	  wx.onMenuShareQQ(shareData);
+	  wx.onMenuShareWeibo(shareData);
+	  wx.onMenuShareQZone(shareData);
+	});
+
+	wx.error(function (res) {
+	  alert(res.errMsg);
+	});
 })
 
 function complete() {
-	$.ajax({
-		url: './data.json',
-		type: 'GET',
-		dataType: 'json',
-		data: {},
-	})
-	.done(function(data, textStatus, jqXHR) {
+	get(function(data) {
 		console.log(data);
-		var res = data.results,
-			resId = [],
-			resHTML = '';
-		res.forEach(function(v, k) {
-			resId[k] = v.id;
-		});
+		var res = data.results;
+			// resHTML = '';
+			var resId = getkey(res);
 		// 自动完成
-		$("#search").completer({
+		$("#tb_search").completer({
 			suggest: true,
 			source: resId,
 			complete: function(val) {
 				console.log(val);
-				if(resId.indexOf(val) !== -1) {
-					resId.forEach(function(v, k) {
-						if(v === val) {
-							console.log(res[k].value)
-							res[k].value.forEach(function(val, i) {
-								resHTML += '<li>'+ val +'</li>';
-							})
-						}
-					});
-					$('#search__res-list').html(resHTML);
-					resHTML = '';
-				} else {
-					$('#search__res-list').html('不存在');
-				}
+				getResult(res, resId, val);
 			}
 		});
-	})
-	.fail(function() {
-		console.log("error");
+	}, function(data) {
+		$('#search_result').show().html('<p style="color:#f00;">网络繁忙</p>');
 	});
-	
+}
+function get(cb, cb2) {
+	$.ajax({
+		url: './ofo_data.json?'+(+new Date()),
+		type: 'GET',
+		dataType: 'json',
+		data: {},
+	})
+	.done(function(data) {
+		cb && cb(data)
+	})
+	.fail(function(data) {
+		cb2 && cb2(data)
+	});	
+}
+function getkey(data) {
+	var resId = [];
+	data.forEach(function(v, k) {
+		resId[k] = v.id;
+	});
+	return resId;
+}
+function getResult(res, resId, val) {
+	var resHTML = '<p>搜索结果：</p><ul>',
+		$result = $('#search_result').show();
+	console.log(resId.indexOf(val))
+	if(resId.indexOf(val) !== -1) {
+		resId.forEach(function(v, k) {
+			if(v === val) {
+				console.log(res[k].value)
+				res[k].value.forEach(function(val, i) {
+					resHTML += '<li>'+ val +'</li>';
+				})
+			}
+		});
+		resHTML += '</ul>'
+		$result.html(resHTML);
+	} else {
+		$result.html('<p style="color:#f00;">暂无数据</p>');
+	}
 }
 </script>
 </body>
