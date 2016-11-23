@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>页面图片加载进度条 page loading...</title>
+</head>
+<body>
+
+<div id="loading-box">
+    <img class="loading-pic" src="http://static.sdg-china.com/ds/pic/ds_act/20150123rz//loading.gif">
+    <span id="loading-txt">正在加载中....</span>
+</div>
+
+
+<script>
+var imgPath = "http://img/baidu.com/src/";
+var loadingPage = (function() {
+    var sourceArr = ['pic1.jpg', 'pic2.jpg', 'pic3.png'];
+    for (var i = 0; i < sourceArr.length; i++) {
+        sourceArr[i] = (imgPath + sourceArr[i])
+    }
+    var loadImage = function(path, callback) {
+            var img = new Image();
+            img.onload = function() {
+                img.onload = null;
+                callback(path)
+            }
+            img.src = path
+        }
+    var imgLoader = function(imgs, callback) {
+            var len = imgs.length,
+                i = 0;
+            while (imgs.length) {
+                loadImage(imgs.shift(), function(path) {
+                    callback(path, ++i, len)
+                })
+            }
+        }
+    imgLoader(sourceArr, function(path, curNum, total) {
+        var percent = curNum / total;
+        document.getElementById('loading-txt').innerHTML = Math.floor(percent * 100) + "%";
+        if (percent == 1) {
+            setTimeout(showPage, 500)
+        }
+    })
+})();
+function showPage() {
+	$('#loading-box').remove();
+	$('#container').fadeIn(300);
+}
+</script>
+
+</body>
+</html>
