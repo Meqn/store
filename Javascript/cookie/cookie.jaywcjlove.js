@@ -57,7 +57,7 @@
                 var c = ca[i];
                 //取得字符串    
                 while (c.charAt(0) == " ") {
-                    //判断一下字符串有没有前导空格
+                    //判断一下字符串有没有前导空格    
                     c = c.substring(1, c.length);
                 }
                 //如果含有我们要的name
@@ -73,12 +73,19 @@
                     if (name.hasOwnProperty(k)) this.set(k, name[k], value);
                 }
             } else {
-                var opt = isPlainObject(options) ? options : {
-                    expires: options
-                }, expires = opt.expires !== undefined ? opt.expires : "", expiresType = typeof expires, path = opt.path !== undefined ? ";path=" + opt.path : ";path=/", domain = opt.domain ? ";domain=" + opt.domain : "", secure = opt.secure ? ";secure" : "";
+                var opt = isPlainObject(options) ? options : {expires: options},
+                	expires = opt.expires !== undefined ? opt.expires : "",
+                	expiresType = typeof expires,
+                	path = opt.path !== undefined ? ";path=" + opt.path : ";path=/",
+                	domain = opt.domain ? ";domain=" + opt.domain : "",
+                	secure = opt.secure ? ";secure" : "";
                 //过期时间
-                if (expiresType === "string" && expires !== "") expires = new Date(expires); else if (expiresType === "number") expires = new Date(+new Date() + 1e3 * 60 * 60 * 24 * expires);
-                if (expires !== "" && "toGMTString" in expires) expires = ";expires=" + expires.toGMTString();
+                if (expiresType === "string" && expires !== "") 
+                	expires = new Date(expires); 
+                else if (expiresType === "number") 
+                	expires = new Date(+new Date() + 1e3 * 60 * 60 * 24 * expires);
+                if (expires !== "" && "toGMTString" in expires) 
+                	expires = ";expires=" + expires.toGMTString();
                 document.cookie = name + "=" + escape(value) + expires + path + domain + secure;
             }
         },
