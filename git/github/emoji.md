@@ -4,8 +4,9 @@
 [开源项目 gitmoji](https://gitmoji.carloscuesta.me/) 专门规定了在 github 提交代码时应当遵循的 emoji 规范：
 
 **gitmoji 项目：**
-官网：https://gitmoji.carloscuesta.me/
-git：https://github.com/carloscuesta/gitmoji/
+
+官网：https://gitmoji.carloscuesta.me/  
+git：https://github.com/carloscuesta/gitmoji/  
 
 ![emoji](./emoji_git1.png)
 
