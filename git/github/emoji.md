@@ -8,7 +8,7 @@
 官网：https://gitmoji.carloscuesta.me/  
 git：https://github.com/carloscuesta/gitmoji/  
 
-![emoji](./emoji_git1.png)
+![emoji](./emoji/emoji_git1.png)
 
  - `:art:` - 改进结构和代码格式 			:art:
  - `:zap:` - 优化性能 					:zap:
@@ -20,7 +20,7 @@ git：https://github.com/carloscuesta/gitmoji/
  - `:rocket:` - 部署新功能 				:rocket:
 
 
-![emoji](./emoji_git2.png)
+![emoji](./emoji/emoji_git2.png)
 
  - `:white_check_mark:` - 添加测试用例 				:white_check_mark:
  - `:bookmark:` - 发版/版本标签 						:bookmark:
@@ -32,7 +32,7 @@ git：https://github.com/carloscuesta/gitmoji/
  - `:arrow_down:` - 降级依赖库 						:arrow_down:
 
 
-![emoji](./emoji_git3.png)
+![emoji](./emoji/emoji_git3.png)
 
  - `:checkered_flag:` - 修复 Windows 下的问题 		:checkered_flag:
  - `:arrow_up:` - 升级依赖库 							:arrow_up:
