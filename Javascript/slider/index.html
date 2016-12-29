@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>slides</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+</head>
+<body>
+
+<div class="slidesbox">
+	<div class="slides" id="slides">
+		<ul>
+			<li>0</li>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</div>
+	<div class="prev">上一页</div>
+	<div class="next">下一页</div>
+	<div class="slide-navi"></div>
+</div>
+<span id="btnnextpage">下一页</span>
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+
+<div class="slidesbox slidesbox2">
+	<div class="slides" id="slides2">
+		<ul>
+			<li>0</li>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+	<div class="prev">上一页</div>
+	<div class="next">下一页</div>
+	<div class="slide-navi"></div>
+</div>
+
+<div class="slidesbox slidesbox2 slidesbox4">
+	<div class="slides" id="slides4">
+		<ul>
+			<li>0</li>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+	<div class="prev">上一页</div>
+	<div class="next">下一页</div>
+	<div class="slide-navi"></div>
+</div>
+
+
+<div class="slidesbox3">
+	<div class="slides" id="slides3">
+		<ul>
+			<li>0</li>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</div>
+	<div class="prev">上一页</div>
+	<div class="next">下一页</div>
+	<div class="slide-navi"></div>
+</div>
+
+
+
+<script type="text/javascript" src="http://libs.useso.com/js/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//var mqs = window.mq||{};
+	function mqs(ele,options){
+		var s = this;
+		options = options || {};
+		s.opt = options;
+		s.wrap = ele;
+		s.opt.num = parseInt(options.num) || 1; 			// 每次滚动个数
+		s.opt.inx = options.inx || 0; 						// 索引
+		s.opt.timer = options.timer || 4000; 				// 间隔时间
+		s.opt.auto = options.auto !== undefined ? options.auto : true;		// 是否自动播放
+		s.opt.ispage = options.ispage !== undefined ? options.ispage : true;	// 是否分页
+		s.opt.loop = options.loop !== undefined ? options.loop : true; 			// 是否循环
+		s.opt.dire = options.dire || 'left';
+		s.opt.callback = options.callback || function(){};
+		s.opt.started = options.started || function(){};
+		s.ul = $(ele).find('ul');
+		s.li = $(ele).find('li');
+		s.count = s.li.length; 								// 总个数
+		s.len = Math.ceil(s.count / s.opt.num);				// 总页数
+		s.rem = s.count % s.opt.num; 						// 分页后剩余数
+		s.w = s.li.outerWidth(true); 						// 单元格宽度(包括margin)
+		s.h = s.li.outerHeight(true);
+		s.pagewrap = $(ele).siblings('.slide-navi');
+		s.picTimer;											// 自动播放
+		if(s.opt.dire === 'left') {
+			s.ul.width(s.w*s.count); 						// 水平滚动，设置slide宽
+		}
+		// 私有方法
+		// function fn(){}
+		// 公有方法
+		// this.fn = function(){}
+		if(s.opt.auto) {
+			$(s.wrap).mouseenter(function() {
+				clearInterval(s.picTimer);
+			}).mouseleave(function() {
+				s.picTimer = setInterval(function(){
+					s.opt.inx++;
+					if(s.opt.inx == s.len) {s.opt.inx = 0;}
+					s.Play(s.opt.inx);
+				},s.opt.timer);
+			}).trigger('mouseleave');
+		}
+		$(ele).siblings('.next').on('click', function(event) { s.Next(); });
+		$(ele).siblings('.prev').on('click', function(event) { s.Prev(); });
+		if(s.opt.ispage) {
+			s.pages();
+		}
+		s.Play(s.opt.inx);
+		s.opt.started(s.opt.inx,s.len);
+	}
+	mqs.prototype = {
+		pages 	: function(){
+			var self = this;
+			var page = '';
+			for(var i=0;i<this.len;i++) {
+				page += '<span>'+(i+1)+'</span>';
+			}
+			self.pagewrap.html(page);
+			$(self.pagewrap).find('span').click(function(event) {
+				var inx = $(this).index();
+				self.Play(inx);
+			});
+		},
+		Play	: function(index){
+			var self = this;
+			var nowLeft = -index*self.opt.num*self.w;
+			var nowTop = -index*self.opt.num*self.h;
+			if(index == (self.len - 1) && self.rem != 0) {
+				nowLeft = -((index - 1) * self.w * self.opt.num + self.w * self.rem);
+				nowTop = -((index - 1) * self.h * self.opt.num + self.h * self.rem);
+			}
+			switch(self.opt.dire) {
+				case 'left':
+					self.ul.animate({'margin-left':nowLeft+'px'}, 300);
+					break;
+				case 'up':
+					self.ul.animate({'margin-top':nowTop+'px'}, 300);
+					break;
+				case 'fade':
+					self.li.fadeOut(300).eq(index).fadeIn(300);
+					break;
+				default:
+					self.ul.animate({'margin-left':nowLeft+'px'}, 300);
+			}
+			
+			self.pagewrap.find('span').removeClass('active').eq(index).addClass('active');
+			// 分页按钮
+			if(index == (self.len-1)) { $(self.wrap).siblings('.next').addClass('next-disable'); }
+			else { $(self.wrap).siblings('.next').removeClass('next-disable'); }
+			if(index == 0) { $(self.wrap).siblings('.prev').addClass('prev-disable'); }
+			else {$(self.wrap).siblings('.prev').removeClass('prev-disable');}
+			self.opt.callback(index,self.len);
+			console.log('index: '+index);
+		},
+		Next 	: function(){
+			if(!this.opt.loop && this.opt.inx == (this.len-1)) return false;
+			this.opt.inx += 1;
+			if(this.opt.inx == this.len) {this.opt.inx = 0;}
+			this.Play(this.opt.inx);
+		},
+		Prev 	: function(){
+			if(!this.opt.loop && this.opt.inx == 0) return false;
+			this.opt.inx -= 1;
+			if(this.opt.inx == -1) {this.opt.inx = this.len - 1;}
+			this.Play(this.opt.inx);
+		}
+	}
+
+	// 实例化 
+	/*
+	num	显示个数(1)
+	inx	默认第几页(0)
+	timer	间隔时间(4000)
+	auto	是否自动播放(true,false)
+	ispage	是否分页(true,false)
+	loop	是否循环(true,false)
+	dire	方向(left,up)
+	callback
+	*/
+	var s1 = new mqs('#slides',{auto:false,ispage:true,num:2,callback:function(a,b){console.log('callback: '+a+' - '+b)},started:function(index){console.log('开始啦')}});
+	var s2 = new mqs('#slides2');
+	var s4 = new mqs('#slides4',{dire:'fade'});
+	var s3 = new mqs('#slides3',{auto:false,dire:'up',num:2});
+
+	$('#btnnextpage').click(function(event) {
+		s1.Next();
+	});
+});
+</script>
+</body>
+</html>

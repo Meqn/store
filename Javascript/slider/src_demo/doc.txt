@@ -1,0 +1,9 @@
+https://github.com/lipten/slidePage
+
+https://github.com/joelambert/Flux-Slider
+
+
+https://github.com/bartaz/slide.js/blob/master/slide.js
+
+
+https://github.com/lzxb/WolfSlide
