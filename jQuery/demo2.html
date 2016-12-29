@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+<div class="test"></div>
+<input type="button" rel="index" value="index(5)">
+<input type="button" rel="prev" value="prev">
+<input type="button" rel="next" value="next">
+
+<script src="http://cdn.staticfile.org/jquery/1.10.0/jquery.min.js"></script>
+<script>
+
+$(function() {
+	var slider1 = $('.test').slider();
+
+	$('[rel=index]').on('click', function(event) {
+		$('.test').slider(5)
+	});
+
+	$('[rel=next]').on('click', function(event) {
+		$('.test').slider('next')
+	});
+
+	$('[rel=prev]').on('click', function(event) {
+		$('.test').slider('prev');
+	});
+})
+
+
+
+
+;(function($) {
+	var defaults = {
+		width: 100,
+		height: 100,
+		index: 0,
+		callback: {
+			loaded: function() {},
+			start: function() {},
+			complete: function() {}
+		}
+	};
+	var Plugin = function(el, options) {
+		this.el = el;
+		this.options = $.extend(true, {}, defaults, options);
+		this.init();
+	}
+	Plugin.pluginName = 'slider';
+	Plugin.dataName = 'pluginDataName';
+	Plugin.version = '1.0.0'
+	Plugin.prototype = {
+		Constructor: Plugin,
+		init: function() {
+			/**
+			 * init 代码
+			 * console.log('init');
+			 */
+			console.log(this.options.index)
+			return this.options.callback.loaded();
+		},
+		prev: function() {
+			this.options.index--;
+			console.log(this.options.index)
+		},
+		next: function() {
+			this.options.index++;
+			console.log(this.options.index)
+		},
+		show: function(i) {
+			this.options.index = i;
+			console.log(this.options.index)
+		}
+	}
+
+	$.fn[Plugin.pluginName] = function(options) {
+		return this.each(function() {
+			var $this = $(this);
+			var instance = $this.data(Plugin.dataName);
+
+			if(options === undefined) {
+				options = {}
+			}
+			if(typeof options === 'object') {
+				//只实例化一次，后续如果再次调用了该插件时，则直接获取缓存的对象
+				if(!instance) {
+					//将实例化后的插件缓存在dom结构里（内存里）[注：zepto的data()只能存string类型，其他类型需要使用zepto.data插件]
+					$this.data(Plugin.dataName, (instance = new Plugin(this, options)));
+				}
+			}
+			if(typeof options === 'string') {
+				instance[options]();
+			}
+			if(typeof options === "number") {
+				instance['show'](options);
+			}
+		});
+	};
+
+})(window.jQuery || window.Zepto || window.$);
+</script>	
+</body>
+</html>
