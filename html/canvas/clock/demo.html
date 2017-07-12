@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telphone=no, email=no">
+<title>draw clock</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style>
+*{margin: 0;padding: 0;}
+div{
+  text-align: center;
+}
+div.box{
+  margin: 50px auto;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+span{
+  display: inline-block;
+  font-size: 20px;
+  margin: 0px 20px;
+}
+canvas{
+  transform: scale(.5)
+}
+</style>
+</head>
+<body>
+<canvas id="clock" width="360px" height="360px"></canvas>
+<p>当前时间：<span id="time">00:00:00</span></p>
+<script src="./clock.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function (event) {
+  var Clock = DrawClick.create('#clock');
+
+  function draw() {
+    var date = new Date();
+    var hour = date.getHours(),
+      minute = date.getMinutes(),
+      second = date.getSeconds()
+
+    Clock.draw(hour, minute, second)
+    document.querySelector('#time').innerHTML = zero(hour) + " : " + zero(minute) + " : " + zero(second)
+  }
+
+  setInterval(draw, 1000);
+});
+
+function zero(num) {
+  return num > 9 ? num : '0'+ num
+}
+
+</script>
+</body>
+</html>
