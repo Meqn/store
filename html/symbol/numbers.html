@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telphone=no, email=no">
+  <title>title</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link href="" rel="stylesheet">
+  <style>
+    .character-grid {
+      margin: 32px 2%;
+      font-size: 0;
+    }
+
+    .character {
+      display: inline-block;
+      width: 72px;
+      height: 72px;
+      margin: -1px 0 0 -1px;
+      font-size: 32px;
+      text-align: center;
+      line-height: 72px;
+      border: 1px solid #e5e5e5;
+    }
+  </style>
+</head>
+
+<body>
+<div class="character-grid">
+  <div class="character" title="zero" data-font="system">
+    <span class="symbol">
+      <span>0</span>
+    </span>
+  </div>
+  <div class="character" title="one" data-font="system">
+    <span class="symbol">
+      <span>1</span>
+    </span>
+  </div>
+  <div class="character" title="two" data-font="system">
+    <span class="symbol">
+      <span>2</span>
+    </span>
+  </div>
+  <div class="character" title="three" data-font="system">
+    <span class="symbol">
+      <span>3</span>
+    </span>
+  </div>
+  <div class="character" title="four" data-font="system">
+    <span class="symbol">
+      <span>4</span>
+    </span>
+  </div>
+  <div class="character" title="five" data-font="system">
+    <span class="symbol">
+      <span>5</span>
+    </span>
+  </div>
+  <div class="character" title="six" data-font="system">
+    <span class="symbol">
+      <span>6</span>
+    </span>
+  </div>
+  <div class="character" title="seven" data-font="system">
+    <span class="symbol">
+      <span>7</span>
+    </span>
+  </div>
+  <div class="character" title="eight" data-font="system">
+    <span class="symbol">
+      <span>8</span>
+    </span>
+  </div>
+  <div class="character" title="nine" data-font="system">
+    <span class="symbol">
+      <span>9</span>
+    </span>
+  </div>
+  <div class="character" title="fraction one quarter" data-font="system">
+    <span class="symbol">
+      <span>¼</span>
+    </span>
+  </div>
+  <div class="character" title="fraction one half" data-font="system">
+    <span class="symbol">
+      <span>½</span>
+    </span>
+  </div>
+  <div class="character" title="fraction three quarters" data-font="system">
+    <span class="symbol">
+      <span>¾</span>
+    </span>
+  </div>
+  <div class="character" title="vulgar fraction one seventh" data-font="system">
+    <span class="symbol">
+      <span>⅐</span>
+    </span>
+  </div>
+  <div class="character" title="vulgar fraction one ninth" data-font="system">
+    <span class="symbol">
+      <span>⅑</span>
+    </span>
+  </div>
+  <div class="character" title="vulgar fraction one tenth" data-font="system">
+    <span class="symbol">
+      <span>⅒</span>
+    </span>
+  </div>
+  <div class="character" title="vulgar fraction one third" data-font="system">
+    <span class="symbol">
+      <span>⅓</span>
+    </span>
+  </div>
+  <div class="character" title="vulgar fraction two thirds" data-font="system">
+    <span class="symbol">
+      <span>⅔</span>
+    </span>
+  </div>
+  <div class="character" title="vulgar fraction one fifth" data-font="system">
+    <span class="symbol">
+      <span>⅕</span>
+    </span>
+  </div>
+  <div class="character" title="vulgar fraction two fifths" data-font="system">
+    <span class="symbol">
+      <span>⅖</span>
+    </span>
+  </div>
+  <div class="character" title="vulgar fraction three fifths" data-font="system">
+    <span class="symbol">
+      <span>⅗</span>
+    </span>
+  </div>
+  <div class="character" title="vulgar fraction four fifths" data-font="system">
+    <span class="symbol">
+      <span>⅘</span>
+    </span>
+  </div>
+  <div class="character" title="vulgar fraction one sixth" data-font="system">
+    <span class="symbol">
+      <span>⅙</span>
+    </span>
+  </div>
+  <div class="character" title="vulgar fraction five sixths" data-font="system">
+    <span class="symbol">
+      <span>⅚</span>
+    </span>
+  </div>
+  <div class="character" title="vulgar fraction one eighth" data-font="system">
+    <span class="symbol">
+      <span>⅛</span>
+    </span>
+  </div>
+  <div class="character" title="vulgar fraction three eighths" data-font="system">
+    <span class="symbol">
+      <span>⅜</span>
+    </span>
+  </div>
+  <div class="character" title="vulgar fraction five eighths" data-font="system">
+    <span class="symbol">
+      <span>⅝</span>
+    </span>
+  </div>
+  <div class="character" title="vulgar fraction seven eighths" data-font="system">
+    <span class="symbol">
+      <span>⅞</span>
+    </span>
+  </div>
+  <div class="character" title="fraction numerator one" data-font="system">
+    <span class="symbol">
+      <span>⅟</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral one" data-font="system">
+    <span class="symbol">
+      <span>Ⅰ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral two" data-font="system">
+    <span class="symbol">
+      <span>Ⅱ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral three" data-font="system">
+    <span class="symbol">
+      <span>Ⅲ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral four" data-font="system">
+    <span class="symbol">
+      <span>Ⅳ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral five" data-font="system">
+    <span class="symbol">
+      <span>Ⅴ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral six" data-font="system">
+    <span class="symbol">
+      <span>Ⅵ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral seven" data-font="system">
+    <span class="symbol">
+      <span>Ⅶ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral eight" data-font="system">
+    <span class="symbol">
+      <span>Ⅷ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral nine" data-font="system">
+    <span class="symbol">
+      <span>Ⅸ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral ten" data-font="system">
+    <span class="symbol">
+      <span>Ⅹ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral eleven" data-font="system">
+    <span class="symbol">
+      <span>Ⅺ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral twelve" data-font="system">
+    <span class="symbol">
+      <span>Ⅻ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral fifty" data-font="system">
+    <span class="symbol">
+      <span>Ⅼ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral one hundred" data-font="system">
+    <span class="symbol">
+      <span>Ⅽ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral five hundred" data-font="system">
+    <span class="symbol">
+      <span>Ⅾ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral one thousand" data-font="system">
+    <span class="symbol">
+      <span>Ⅿ</span>
+    </span>
+  </div>
+  <div class="character" title="small roman numeral one" data-font="system">
+    <span class="symbol">
+      <span>ⅰ</span>
+    </span>
+  </div>
+  <div class="character" title="small roman numeral two" data-font="system">
+    <span class="symbol">
+      <span>ⅱ</span>
+    </span>
+  </div>
+  <div class="character" title="small roman numeral three" data-font="system">
+    <span class="symbol">
+      <span>ⅲ</span>
+    </span>
+  </div>
+  <div class="character" title="small roman numeral four" data-font="system">
+    <span class="symbol">
+      <span>ⅳ</span>
+    </span>
+  </div>
+  <div class="character" title="small roman numeral five" data-font="system">
+    <span class="symbol">
+      <span>ⅴ</span>
+    </span>
+  </div>
+  <div class="character" title="small roman numeral six" data-font="system">
+    <span class="symbol">
+      <span>ⅵ</span>
+    </span>
+  </div>
+  <div class="character" title="small roman numeral seven" data-font="system">
+    <span class="symbol">
+      <span>ⅶ</span>
+    </span>
+  </div>
+  <div class="character" title="small roman numeral eight" data-font="system">
+    <span class="symbol">
+      <span>ⅷ</span>
+    </span>
+  </div>
+  <div class="character" title="small roman numeral nine" data-font="system">
+    <span class="symbol">
+      <span>ⅸ</span>
+    </span>
+  </div>
+  <div class="character" title="small roman numeral ten" data-font="system">
+    <span class="symbol">
+      <span>ⅹ</span>
+    </span>
+  </div>
+  <div class="character" title="small roman numeral eleven" data-font="system">
+    <span class="symbol">
+      <span>ⅺ</span>
+    </span>
+  </div>
+  <div class="character" title="small roman numeral twelve" data-font="system">
+    <span class="symbol">
+      <span>ⅻ</span>
+    </span>
+  </div>
+  <div class="character" title="small roman numeral fifty" data-font="system">
+    <span class="symbol">
+      <span>ⅼ</span>
+    </span>
+  </div>
+  <div class="character" title="small roman numeral one hundred" data-font="system">
+    <span class="symbol">
+      <span>ⅽ</span>
+    </span>
+  </div>
+  <div class="character" title="small roman numeral five hundred" data-font="system">
+    <span class="symbol">
+      <span>ⅾ</span>
+    </span>
+  </div>
+  <div class="character" title="small roman numeral one thousand" data-font="system">
+    <span class="symbol">
+      <span>ⅿ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral one thousand c d" data-font="system">
+    <span class="symbol">
+      <span>ↀ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral five thousand" data-font="system">
+    <span class="symbol">
+      <span>ↁ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral ten thousand" data-font="system">
+    <span class="symbol">
+      <span>ↂ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral reversed one hundred" data-font="system">
+    <span class="symbol">
+      <span>Ↄ</span>
+    </span>
+  </div>
+  <div class="character" title="latin small letter reversed c" data-font="system">
+    <span class="symbol">
+      <span>ↄ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral six late form" data-font="system">
+    <span class="symbol">
+      <span>ↅ</span>
+    </span>
+  </div>
+  <div class="character" title="roman numeral fifty early form" data-font="system">
+    <span class="symbol">
+      <span>ↆ</span>
+    </span>
+  </div>
+  <div class="character" title="vulgar fraction zero thirds" data-font="system">
+    <span class="symbol">
+      <span>↉</span>
+    </span>
+  </div>
+  <div class="character" title="digit zero full stop" data-font="system">
+    <span class="symbol">
+      <span>🄀</span>
+    </span>
+  </div>
+  <div class="character" title="digit one full stop" data-font="system">
+    <span class="symbol">
+      <span>⒈</span>
+    </span>
+  </div>
+  <div class="character" title="digit two full stop" data-font="system">
+    <span class="symbol">
+      <span>⒉</span>
+    </span>
+  </div>
+  <div class="character" title="digit three full stop" data-font="system">
+    <span class="symbol">
+      <span>⒊</span>
+    </span>
+  </div>
+  <div class="character" title="digit four full stop" data-font="system">
+    <span class="symbol">
+      <span>⒋</span>
+    </span>
+  </div>
+  <div class="character" title="digit five full stop" data-font="system">
+    <span class="symbol">
+      <span>⒌</span>
+    </span>
+  </div>
+  <div class="character" title="digit six full stop" data-font="system">
+    <span class="symbol">
+      <span>⒍</span>
+    </span>
+  </div>
+  <div class="character" title="digit seven full stop" data-font="system">
+    <span class="symbol">
+      <span>⒎</span>
+    </span>
+  </div>
+  <div class="character" title="digit eight full stop" data-font="system">
+    <span class="symbol">
+      <span>⒏</span>
+    </span>
+  </div>
+  <div class="character" title="digit nine full stop" data-font="system">
+    <span class="symbol">
+      <span>⒐</span>
+    </span>
+  </div>
+  <div class="character" title="number ten full stop" data-font="system">
+    <span class="symbol">
+      <span>⒑</span>
+    </span>
+  </div>
+  <div class="character" title="number eleven full stop" data-font="system">
+    <span class="symbol">
+      <span>⒒</span>
+    </span>
+  </div>
+  <div class="character" title="number twelve full stop" data-font="system">
+    <span class="symbol">
+      <span>⒓</span>
+    </span>
+  </div>
+  <div class="character" title="number thirteen full stop" data-font="system">
+    <span class="symbol">
+      <span>⒔</span>
+    </span>
+  </div>
+  <div class="character" title="number fourteen full stop" data-font="system">
+    <span class="symbol">
+      <span>⒕</span>
+    </span>
+  </div>
+  <div class="character" title="number fifteen full stop" data-font="system">
+    <span class="symbol">
+      <span>⒖</span>
+    </span>
+  </div>
+  <div class="character" title="number sixteen full stop" data-font="system">
+    <span class="symbol">
+      <span>⒗</span>
+    </span>
+  </div>
+  <div class="character" title="number seventeen full stop" data-font="system">
+    <span class="symbol">
+      <span>⒘</span>
+    </span>
+  </div>
+  <div class="character" title="number eighteen full stop" data-font="system">
+    <span class="symbol">
+      <span>⒙</span>
+    </span>
+  </div>
+  <div class="character" title="number nineteen full stop" data-font="system">
+    <span class="symbol">
+      <span>⒚</span>
+    </span>
+  </div>
+  <div class="character" title="number twenty full stop" data-font="system">
+    <span class="symbol">
+      <span>⒛</span>
+    </span>
+  </div>
+  <div class="character" title="digit zero comma" data-font="system">
+    <span class="symbol">
+      <span>🄁</span>
+    </span>
+  </div>
+  <div class="character" title="digit one comma" data-font="system">
+    <span class="symbol">
+      <span>🄂</span>
+    </span>
+  </div>
+  <div class="character" title="digit two comma" data-font="system">
+    <span class="symbol">
+      <span>🄃</span>
+    </span>
+  </div>
+  <div class="character" title="digit three comma" data-font="system">
+    <span class="symbol">
+      <span>🄄</span>
+    </span>
+  </div>
+  <div class="character" title="digit four comma" data-font="system">
+    <span class="symbol">
+      <span>🄅</span>
+    </span>
+  </div>
+  <div class="character" title="digit five comma" data-font="system">
+    <span class="symbol">
+      <span>🄆</span>
+    </span>
+  </div>
+  <div class="character" title="digit six comma" data-font="system">
+    <span class="symbol">
+      <span>🄇</span>
+    </span>
+  </div>
+  <div class="character" title="digit seven comma" data-font="system">
+    <span class="symbol">
+      <span>🄈</span>
+    </span>
+  </div>
+  <div class="character" title="digit eight comma" data-font="system">
+    <span class="symbol">
+      <span>🄉</span>
+    </span>
+  </div>
+  <div class="character" title="digit nine comma" data-font="system">
+    <span class="symbol">
+      <span>🄊</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized digit one" data-font="system">
+    <span class="symbol">
+      <span>⑴</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized digit two" data-font="system">
+    <span class="symbol">
+      <span>⑵</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized digit three" data-font="system">
+    <span class="symbol">
+      <span>⑶</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized digit four" data-font="system">
+    <span class="symbol">
+      <span>⑷</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized digit five" data-font="system">
+    <span class="symbol">
+      <span>⑸</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized digit six" data-font="system">
+    <span class="symbol">
+      <span>⑹</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized digit seven" data-font="system">
+    <span class="symbol">
+      <span>⑺</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized digit eight" data-font="system">
+    <span class="symbol">
+      <span>⑻</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized digit nine" data-font="system">
+    <span class="symbol">
+      <span>⑼</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized number ten" data-font="system">
+    <span class="symbol">
+      <span>⑽</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized number eleven" data-font="system">
+    <span class="symbol">
+      <span>⑾</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized number twelve" data-font="system">
+    <span class="symbol">
+      <span>⑿</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized number thirteen" data-font="system">
+    <span class="symbol">
+      <span>⒀</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized number fourteen" data-font="system">
+    <span class="symbol">
+      <span>⒁</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized number fifteen" data-font="system">
+    <span class="symbol">
+      <span>⒂</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized number sixteen" data-font="system">
+    <span class="symbol">
+      <span>⒃</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized number seventeen" data-font="system">
+    <span class="symbol">
+      <span>⒄</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized number eighteen" data-font="system">
+    <span class="symbol">
+      <span>⒅</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized number nineteen" data-font="system">
+    <span class="symbol">
+      <span>⒆</span>
+    </span>
+  </div>
+  <div class="character" title="parenthesized number twenty" data-font="system">
+    <span class="symbol">
+      <span>⒇</span>
+    </span>
+  </div>
+  <div class="character" title="circled digit zero" data-font="system">
+    <span class="symbol">
+      <span>⓪</span>
+    </span>
+  </div>
+  <div class="character" title="circled digit one" data-font="system">
+    <span class="symbol">
+      <span>①</span>
+    </span>
+  </div>
+  <div class="character" title="circled digit two" data-font="system">
+    <span class="symbol">
+      <span>②</span>
+    </span>
+  </div>
+  <div class="character" title="circled digit three" data-font="system">
+    <span class="symbol">
+      <span>③</span>
+    </span>
+  </div>
+  <div class="character" title="circled digit four" data-font="system">
+    <span class="symbol">
+      <span>④</span>
+    </span>
+  </div>
+  <div class="character" title="circled digit five" data-font="system">
+    <span class="symbol">
+      <span>⑤</span>
+    </span>
+  </div>
+  <div class="character" title="circled digit six" data-font="system">
+    <span class="symbol">
+      <span>⑥</span>
+    </span>
+  </div>
+  <div class="character" title="circled digit seven" data-font="system">
+    <span class="symbol">
+      <span>⑦</span>
+    </span>
+  </div>
+  <div class="character" title="circled digit eight" data-font="system">
+    <span class="symbol">
+      <span>⑧</span>
+    </span>
+  </div>
+  <div class="character" title="circled digit nine" data-font="system">
+    <span class="symbol">
+      <span>⑨</span>
+    </span>
+  </div>
+  <div class="character" title="double circled digit one" data-font="system">
+    <span class="symbol">
+      <span>⓵</span>
+    </span>
+  </div>
+  <div class="character" title="double circled digit two" data-font="system">
+    <span class="symbol">
+      <span>⓶</span>
+    </span>
+  </div>
+  <div class="character" title="double circled digit three" data-font="system">
+    <span class="symbol">
+      <span>⓷</span>
+    </span>
+  </div>
+  <div class="character" title="double circled digit four" data-font="system">
+    <span class="symbol">
+      <span>⓸</span>
+    </span>
+  </div>
+  <div class="character" title="double circled digit five" data-font="system">
+    <span class="symbol">
+      <span>⓹</span>
+    </span>
+  </div>
+  <div class="character" title="double circled digit six" data-font="system">
+    <span class="symbol">
+      <span>⓺</span>
+    </span>
+  </div>
+  <div class="character" title="double circled digit seven" data-font="system">
+    <span class="symbol">
+      <span>⓻</span>
+    </span>
+  </div>
+  <div class="character" title="double circled digit eight" data-font="system">
+    <span class="symbol">
+      <span>⓼</span>
+    </span>
+  </div>
+  <div class="character" title="double circled digit nine" data-font="system">
+    <span class="symbol">
+      <span>⓽</span>
+    </span>
+  </div>
+  <div class="character" title="double circled number ten" data-font="system">
+    <span class="symbol">
+      <span>⓾</span>
+    </span>
+  </div>
+</div>
+</body>
+
+</html>
