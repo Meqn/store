@@ -1,0 +1,40 @@
+{
+  "name": "gulp-tpl",
+  "version": "1.0.0",
+  "description": "gulp www template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "start": "gulp -ws",
+    "dev": "gulp -ws",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mengqing723/code-store.git"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "lmq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mengqing723/code-store/issues"
+  },
+  "homepage": "https://github.com/mengqing723/code-store#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.0.0",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-content-includer": "^0.0.7",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "http-proxy-middleware": "^0.17.4",
+    "yargs": "^11.0.0"
+  }
+}
