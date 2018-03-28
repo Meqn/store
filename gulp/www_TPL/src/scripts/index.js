@@ -1,3 +1,3 @@
-function home() {
-  console.log('index.js 3 ...')
+function index() {
+  console.log('index page ...')
 }

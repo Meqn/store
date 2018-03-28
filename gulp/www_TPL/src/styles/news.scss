@@ -1,5 +1,11 @@
-@import 'page/var';
-
-.about{
-  color: green;
+.news{
+  ul{
+    padding: 36px 5%;
+    li{
+      line-height: 36px;
+      &.active{
+        color: green;
+      }
+    }
+  }
 }

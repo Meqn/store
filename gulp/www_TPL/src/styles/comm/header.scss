@@ -1,0 +1,22 @@
+.header{
+  padding: 24px;
+  text-align: center;
+  background-color: #e5e5e5;
+
+  ul{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px;
+    li{
+      width: 20%;
+      list-style: none;
+    }
+    .active{
+      color: #f00;
+    }
+  }
+}
+.logo{
+  background: url('/@@/images/logo.png');
+}
