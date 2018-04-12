@@ -5,157 +5,11 @@ tags: 面试
 categories: Front-End
 ---
 
-## 目录
+# 目录
 
-### $HTML， HTTP，web综合问题
+[TOC]
 
-- 1、前端需要注意哪些`SEO`
-- 2、`<img>`的`title`和`alt`有什么区别
-- 3、`HTTP`的几种请求方法用途
-- 4、从浏览器地址栏输入`url`到显示页面的步骤
-- 5、如何进行网站性能优化
-- 6、HTTP状态码及其含义
-- 7、语义化的理解
-- 8、介绍一下你对浏览器内核的理解
-- 9、`html5`有哪些新特性、移除了那些元素？
-- 10、`HTML5`的离线储存怎么使用，工作原理能不能解释一下？
-- 11、浏览器是怎么对`HTML5`的离线储存资源进行管理和加载的呢
-- 12、请描述一下 `cookies`，`sessionStorage` 和 `localStorage` 的区别
-- 13、`iframe`有那些缺点？
-- 14、`WEB`标准以及W3C标准是什么?
-- 15、`xhtml`和`html`有什么区别?
-- 16、`Doctype`作用? 严格模式与混杂模式如何区分？它们有何意义?
-- 17、行内元素有哪些？块级元素有哪些？ 空(`void`)元素有那些？行内元素和块级元素有什么区别？
-- 18、`HTML`全局属性(`global attribute`)有哪些
-- 19、`Canvas`和`SVG`有什么区别？
-- 20、`HTML5` 为什么只需要写 `<!DOCTYPE HTML>？`
-- 21、如何在页面上实现一个圆形的可点击区域？
-- 22、网页验证码是干嘛的，是为了解决什么安全问题
-
-### $CSS部分
-
-- 1、`css sprite`是什么,有什么优缺点
-- 2、`display: none;`与`visibility: hidden`;的区别
-- 3、`link`与`@import`的区别
-- 4、什么是`FOUC?`如何避免
-- 5、如何创建块级格式化上下文(`block formatting context`),`BFC`有什么用
-- 7、清除浮动的几种方式，各自的优缺点
-- 8、为什么要初始化`CSS`样式?
-- 9、`css3`有哪些新特性
-- 10、`display`有哪些值？说明他们的作用
-- 11、介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？
-- 12、`CSS`优先级算法如何计算？
-- 13、对`BFC`规范的理解？
-- 14、谈谈浮动和清除浮动
-- 15、`position`的值， `relative`和absolute`定位原点是
-- 16、`display:inline-block` 什么时候不会显示间隙？(携程)
-- 17、`PNG,GIF,JPG`的区别及如何选
-- 18、行内元素`float:left`后是否变为块级元素？
-- 19、在网页中的应该使用奇数还是偶数的字体？为什么呢？
-- 20、`::before` 和 `:after`中双冒号和单冒号有什么区别？解释一下这`2`个伪元素的作用
-- 21、如果需要手动写动画，你认为最小时间间隔是多久，为什么？（阿里）
-- 22、`CSS`合并方法
-- 23、`CSS`不同选择器的权重(`CSS`层叠的规则)
-- 24、列出你所知道可以改变页面布局的属性
-- 25、`CSS`在性能优化方面的实践
-- 26、`CSS3`动画（简单动画的实现，如旋转等）
-- 27、`base64`的原理及优缺点
-
-
-
-### $JavaScript
-
-- 1、闭包
-- 2、说说你对作用域链的理解
-- 3、`JavaScript`原型，原型链 ? 有什么特点？
-- 4、请解释什么是事件代理
-- 5、`Javascript`如何实现继承？
-- 6、谈谈`This`对象的理解
-- 7、事件模型
-- 8、`new`操作符具体干了什么呢?
-- 9、`Ajax`原理
-- 11、模块化开发怎么做？
-- 12、异步加载`JS`的方式有哪些？
-- 13、那些操作会造成内存泄漏？
-- 14、`XML`和`JSON`的区别？
-- 15、谈谈你对`webpack`的看法
-- 17、常见`web`安全及防护原理
-- 18、用过哪些设计模式？
-- 19、为什么要有同源限制？
-- 20、`offsetWidth/offsetHeight`,`clientWidth/clientHeight`与`scrollWidth/scrollHeight`的区别
-- 21、`javascript`有哪些方法定义对象
-- 22、常见兼容性问题？
-- 22、说说你对`promise`的了解
-- 23、你觉得`jQuery`源码有哪些写的好的地方
-- 25、`Node`的应用场景
-- 26、谈谈你对`AMD`、`CMD`的理解
-- 27、那些操作会造成内存泄漏？
-- 28、`web`开发中会话跟踪的方法有哪些
-- 29、介绍`js`的基本数据类型
-- 30、介绍`js`有哪些内置对象？
-- 31、说几条写`JavaScript`的基本规范？
-- 32、`JavaScript`有几种类型的值？，你能画一下他们的内存图吗？
-- 33、`javascript`创建对象的几种方式？
-- 34、`eval`是做什么的？
-- 35、`null，undefined` 的区别？
-- 36、`[“1”, “2”, “3”].map(parseInt)` 答案是多少？
-- 37、`javascript` 代码中的`”use strict”`;是什么意思 ? 使用它区别是什么？
-- 38、`JSON `的了解？
-- 39、js延迟加载的方式有哪些？
-- 40、同步和异步的区别?
-- 41、渐进增强和优雅降级
-- 42、`defer`和`async`
-- 43、说说严格模式的限制
-- 44、`attribute`和`property`的区别是什么？
-- 45、谈谈你对`ES6`的理解
-- 46、`ECMAScript6` 怎么写`class`么，为什么会出现`class`这种东西?
-- 47、什么是面向对象编程及面向过程编程，它们的异同和优缺点
-- 48、从你自己的理解来看，你是如何理解面向对象编程的，它解决了什么问题，有什么作用
-- 49、对web标准、可用性、可访问性的理解
-
-### $编程题
-
-
-- 1、写一个通用的事件侦听器函数
-- 2、如何判断一个对象是否为数组
-- 3、冒泡排序
-- 4、快速排序
-- 5、编写一个方法 求一个字符串的字节长度
-
-### $其他
-
-- 1、谈谈你对重构的理解
-- 2、什么样的前端代码是好的
-- 3、对前端工程师这个职位是怎么样理解的？它的前景会怎么样？
-- 4、你觉得前端工程的价值体现在哪
-- 5、平时如何管理你的项目？
-
-### 人事面
-
-- 面试完你还有什么问题要问的吗
-- 你有什么爱好?
-- 你最大的优点和缺点是什么?
-- 你为什么会选择这个行业，职位?
-- 你觉得你适合从事这个岗位吗?
-- 你有什么职业规划?
-- 你对工资有什么要求?
-- 如何看待前端开发？
-- 未来三到五年的规划是怎样的？
-
-
-### 常问
-
-
-- 自我介绍
-- 你的项目中技术难点是什么？遇到了什么问题？你是怎么解决的？
-- 你认为哪个项目做得最好？
-- 最近在看哪些前端方面的书？
-- 平时是如何学习前端开发的？
-- 你最有成就感的一件事
-- 你是怎么学习前端的
-
-
-## $HTML， HTTP，web综合问题
+## 1. HTML， HTTP，web综合问题
 
 
 ### 1、前端需要注意哪些SEO
@@ -411,7 +265,11 @@ FALLBACK:
 - 有效防止黑客对某一个特定注册用户用特定程序暴力破解方式进行不断的登陆尝试
 
 
-## $CSS部分
+
+
+
+
+## 2. CSS部分
 
 ### 1、css sprite是什么,有什么优缺点
 
@@ -431,14 +289,14 @@ FALLBACK:
 
 ### 2、`display: none;`与`visibility: hidden;`的区别
 
-- 联系：它们都能让元素不可见
+它们都能让元素不可见
 
 - 区别：
 
-   - `display:none`;会让元素完全从渲染树中消失，渲染的时候不占据任何空间；`visibility: hidden`;不会让元素从渲染树消失，渲染师元素继续占据空间，只是内容不可见
-   - `display: none`;是非继承属性，子孙节点消失由于元素从渲染树消失造成，通过修改子孙节点属性无法显示`；visibility: hidden;`是继承属性，子孙节点消失由于继承了`hidden`，通过设置`visibility: visible;`可以让子孙节点显式
+   - `display:none`会让元素完全从渲染树中消失，渲染的时候不占据任何空间；`visibility: hidden`不会让元素从渲染树消失，渲染树元素继续占据空间，只是内容不可见
+   - `display: none`是非继承属性，子孙节点消失由于元素从渲染树消失造成，通过修改子孙节点属性无法显示`；visibility: hidden`是继承属性，子孙节点消失由于继承了`hidden`，通过设置`visibility: visible`可以让子孙节点显式
    - 修改常规流中元素的`display`通常会造成文档重排。修改`visibility`属性只会造成本元素的重绘。
-   - 读屏器不会读取`display: none`;元素内容；会读取`visibility: hidden;`元素内容
+   - 读屏器不会读取`display: none`元素内容；会读取`visibility: hidden`元素内容
 
 
 ### 3、`link`与`@import`的区别
@@ -456,21 +314,39 @@ FALLBACK:
 - `Flash Of Unstyled Content`：用户定义样式表加载之前浏览器使用默认样式显示文档，用户样式加载渲染之后再从新显示文档，造成页面闪烁。
 - **解决方法**：把样式表放到文档的`head`
 
-### 5、如何创建块级格式化上下文(block formatting context),BFC有什么用
+### 5、如何创建BFC(块级格式化上下文)，有什么用？
 
-- 创建规则：
+BFC是`Block Formatting Context` 的缩写，意为“块级格式化上下文”，是一个独立的布局环境，我们可以理解为一个箱子（实际上是看不见摸不着的），箱子里面物品的摆放是不受外界的影响的。
 
-  - 根元素
-  - 浮动元素（``float``不是``none``）
-  - 绝对定位元素（``position``取值为``absolute``或``fixed``）
-  - ``display``取值为``inline-block``,``table-cell``, ``table-caption``,``flex``, ``inline-flex``之一的元素
-  - ``overflow``不是``visible``的元素
+转换为BFC的理解则是：BFC中的元素的布局是不受外界的影响（我们往往利用这个特性来消除浮动元素对其非浮动的兄弟元素和其子元素带来的影响。）并且在一个BFC中，块盒与行盒（行盒由一行中所有的内联元素所组成）都会垂直的沿着其父元素的边框排列。
+
+> BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
+
+- 形成BFC条件：
+
+  - 根元素或其它包含它的元素
+  - 浮动元素 (元素的 [`float`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/float) 不是 `none`)
+  - 绝对定位元素 (元素的 [`position`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/position) 为 `absolute` 或 `fixed`)
+  - 内联块 (元素具有 [`display: inline-block`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display))
+  - 表格单元格 (元素具有  [`display: table-cell`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display)，HTML表格单元格默认属性`)
+  - 表格标题 (元素具有 `display: table-caption`, HTML表格标题默认属性)
+  - 具有[`overflow`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow) 且值不是 `visible`的块元素，
+  - [`display: flow-root`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display)
+  - [`column-span: all`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/column-span)应当总是会创建一个新的格式化上下文，即便具有 `column-span: all` 的元素并不被包裹在一个多列容器中。
+
 
 - 作用：
 
-  - 可以包含浮动元素
-  - 不被浮动元素覆盖
-  - 阻止父子元素的`margin`折叠
+  - 阻止外边距`margin`合并
+  - 清除浮动或者文字环绕 (可以包含浮动元素，不被浮动元素覆盖)
+  - 用于布局
+
+
+**父容器使用`overflow: auto| hidden`撑开高度的原理：**
+
+父容器使用`overflow: auto|hidden`构建了BFC区域，BFC是一个独立的空间，使其内部元素不受外界的影响。在这个独立空间内，块盒和行盒都会垂直的沿着其父元素的边框排列，所以高度就被撑开了。
+
+
 
 ### 6、display,float,position的关系
 
@@ -592,7 +468,7 @@ FALLBACK:
 
 ### 20、::before 和 :after中双冒号和单冒号 有什么区别？解释一下这2个伪元素的作用
 
-- 单冒号(`:`)用于CSS3伪类，双冒号(`::`)用于`CSS3`伪元素
+- 单冒号(`:`)用于CSS2伪类，双冒号(`::`)用于`CSS3`伪元素
 - 用于区分伪类和伪元素
 
 ### 21、如果需要手动写动画，你认为最小时间间隔是多久，为什么？（阿里）
@@ -630,12 +506,36 @@ FALLBACK:
 - `transform`：定义元素的变化结果，包含`rotate`、`scale`、`skew`、`translate`。
 - `animation`：动画定义了动作的每一帧（`@keyframes`）有什么效果，包括`animation-name`，`animation-duration`、`animation-timing-function`、`animation-delay`、`animation-iteration-count`、`animation-direction`
 
-### 27、base64的原理及优缺点
+### 27. base64的原理及优缺点
 - 优点可以加密，减少了`http`请求
 - 缺点是需要消耗`CPU`进行编解码
 
 
-## $JavaScript
+
+
+### 28. css3的哪些属性会直接影响JS中的事件？
+
+css3中有两个属性是可以直接影响到JS中的事件的，他们是`pointer-events`和`touch-action`。
+
+**pointer-events** CSS 属性指定在什么情况下 (如果有) 某个特定的图形元素可以成为鼠标事件的 [target](https://link.zhihu.com/?target=https%3A//developer.mozilla.org/zh-CN/docs/Web/API/event.target)。当该属性值设定为`none`时 表示鼠标事件“穿透”该元素并且指定该元素“下面”的任何东西。
+
+需要注意的是，如果当前元素的pointer-events属性指定位none，但是当其后代元素的`pointer-events`属性指定其他值时，鼠标事件可以指向后代元素，在这种情况下，鼠标事件将在捕获或冒泡阶段触发父元素的事件侦听器。
+
+**touch-action** 用于指定某个给定的区域是否允许用户操作，以及如何响应用户操作（比如浏览器自带的划动、缩放等）。
+
+最常见的用法是禁用元素（及其不可滚动的后代）上的所有手势，以使用自己提供的拖放和缩放行为（如地图或游戏表面）。
+
+```css
+#map {
+  touch-action: none;
+}
+```
+
+
+
+
+
+## 3. JavaScript
 
 ### 1、闭包
 - 闭包就是能够读取其他函数内部变量的函数
@@ -678,13 +578,73 @@ FALLBACK:
 -  当我们需要一个属性的时，`Javascript`引擎会先看当前对象中是否有这个属性， 如果没有的
 -  就会查找他的`Prototype`对象是否有这个属性，如此递推下去，一直检索到 `Object` 内建对象
 
-### 4、请解释什么是事件代理
+### 4.1 请解释什么是事件代理
 
-- 事件代理（`Event Delegation`），又称之为事件委托。是 `JavaScript` 中常用绑定事件的常用技巧。顾名思义，“事件代理”即是把原本需要绑定的事件委托给父元素，让父元素担当事件监听的职务。事件代理的原理是DOM元素的事件冒泡。使用事件代理的好处是可以提高性能
+事件代理（`Event Delegation`），又称之为事件委托。是 `JavaScript` 中常用绑定事件的常用技巧。顾名思义，“事件代理”即是把原本需要绑定的事件委托给父元素，让父元素担当事件监听的职务。事件代理的原理是DOM元素的事件冒泡。使用事件代理的好处是可以提高性能
+
 - 可以大量节省内存占用，减少事件注册，比如在`table`上代理所有`td`的`click`事件就非常棒 
 - 可以实现当新增子对象时无需再次对其绑定
 
-### 5、Javascript如何实现继承？
+### 4.2 mouseover和mouseenter两个事件有什么区别？
+
+二者的区别是mouseenter不会冒泡（bubble）。
+
+**详细解释一下**
+
+当二者绑定的元素都没有子元素时，二者的行为是一致的。但是二者内部都包含子元素时，行为就不一样了。
+
+在mouseover绑定的元素中，鼠标每次进入一个子元素就会触发一次mouseover事件，而mouseenter只会触发一次。
+
+
+
+### 4.3 移动端的click事件行为与PC端有什么不同？
+
+移动端的click事件会延迟300ms触发事件回调（只在部分手机浏览器上出现）。
+
+因为手机浏览器中需要处理如翻页这样复杂的手势。在用户做翻页或双击放大等操作时，是先将手指触碰到屏幕（此时理应已经触发了click事件），然后再上下移动手指，浏览器开发厂商为了识别这种事件，所以加入了300ms延迟的处理。
+
+**解决方法**
+
+可以引入Fastclick.js来解决这个问题。它的原理是 FastClick 在检测到touchend事件的时候，会通过 DOM 自定义事件立即触发一个模拟click事件，并把浏览器在 300 毫秒之后真正触发的click事件阻止掉。
+
+
+
+### 4.4 移动端点击穿透的原理和解决方法？
+
+点击穿透是指在移动端，由于click事件延迟300ms触发，那么如果300ms内，页面显示变化（主要是指DOM的隐藏和显示）的话，会出现实际点击元素触发了touch事件，而300ms后该位置的实际元素又被再次触发了click事件的情况。
+
+**避免方法：**可以引入fastclick之类的插件来解决。
+
+
+
+
+### 4.5 Event对象中，target和currentTarget的区别？
+
+currentTarget是当事件遍历DOM时，标识事件的当前目标。它总是引用事件处理程序附加到的元素，而不是event.target，event.target标识事件发生的元素。
+
+
+
+### 5、事件模型
+
+> `W3C`中定义事件的发生经历三个阶段：捕获阶段（`capturing`）、目标阶段（`targetin`）、冒泡阶段（`bubbling`）
+
+事件模型是指分为三个阶段：
+
+- 捕获阶段：在事件冒泡的模型中，捕获阶段不会响应任何事件；
+- 目标阶段：目标阶段就是指事件响应到触发事件的最底层元素上；
+- 冒泡阶段：冒泡阶段就是事件的触发响应会从最底层目标一层层地向外到最外层（根节点），事件代理即是利用事件冒泡的机制把里层所需要响应的事件绑定到外层；
+
+**说明：**
+
+- 冒泡型事件：当你使用事件冒泡时，子级元素先触发，父级元素后触发
+- 捕获型事件：当你使用事件捕获时，父级元素先触发，子级元素后触发
+- `DOM`事件流：同时支持两种事件模型：捕获型事件和冒泡型事件
+- 阻止冒泡：在`W3c`中，使用`stopPropagation（）`方法；在IE下设置`cancelBubble = true`
+- 阻止捕获：阻止事件的默认行为，例如`click - <a>`后的跳转。在`W3c`中，使用`preventDefault（）`方法，在`IE`下设置`window.event.returnValue = false`
+
+
+
+### 6、Javascript如何实现继承？
 
 - 构造继承
 - 原型继承
@@ -709,20 +669,12 @@ FALLBACK:
   }
 ```
 
-### 6、谈谈This对象的理解
+### 7、谈谈This对象的理解
 
 - `this`总是指向函数的直接调用者（而非间接调用者）
 - 如果有`new`关键字，`this`指向`new`出来的那个对象
 - 在事件中，`this`指向触发这个事件的对象，特殊的是，`IE`中的`attachEvent`中的`this`总是指向全局对象`Window`
 
-### 7、事件模型
-> `W3C`中定义事件的发生经历三个阶段：捕获阶段（`capturing`）、目标阶段（`targetin`）、冒泡阶段（`bubbling`）
-
-- 冒泡型事件：当你使用事件冒泡时，子级元素先触发，父级元素后触发
-- 捕获型事件：当你使用事件捕获时，父级元素先触发，子级元素后触发
-- `DOM`事件流：同时支持两种事件模型：捕获型事件和冒泡型事件
-- 阻止冒泡：在`W3c`中，使用`stopPropagation（）`方法；在IE下设置`cancelBubble = true`
-- 阻止捕获：阻止事件的默认行为，例如`click - <a>`后的跳转。在`W3c`中，使用`preventDefault（）`方法，在`IE`下设置`window.event.returnValue = false`
 
 
 ### 8、new操作符具体干了什么呢?
@@ -1148,7 +1100,7 @@ function Dog(){
 
 - `use strict`是一种`ECMAscript 5` 添加的（严格）运行模式,这种模式使得 Javascript 在更严格的条件下运行,使`JS`编码更加规范化的模式,消除`Javascript`语法的一些不合理、不严谨之处，减少一些怪异行为
 
-### 38、JSON 的了解？**
+### 38、JSON 的了解？
 
 - `JSON(JavaScript Object Notation)` 是一种轻量级的数据交换格式
 - 它是基于`JavaScript`的一个子集。数据格式简单, 易于读写, 占用带宽小
@@ -1247,7 +1199,17 @@ var last=JSON.stringify(obj);
 - 可访问性（Accessibility）：Web内容对于残障用户的可阅读和可理解性
 - 可维护性（Maintainability）：一般包含两个层次，一是当系统出现问题时，快速定位并解决问题的成本，成本低则可维护性好。二是代码是否容易被人理解，是否容易修改和增强功能。
 
-## $编程题
+
+
+### 50. 什么是事件循环?
+
+简单的概括下：JavaScript是单线程的，“主线程”负责执行所有的同步任务，一旦所有同步任务执行完成，则立即从“任务队列”中读取最优先的任务放到“主线程”中执行，如此循环往复。向“任务队列”插入的是一个个事件处理函数（确切的说是函数地址）或定时任务（setTimeout的回调）。
+
+
+
+
+
+## 4. 编程题
 
 ### 1、写一个通用的事件侦听器函数
 
@@ -1312,7 +1274,45 @@ function isArray(arg) {
 }
 ```
 
-### 3、冒泡排序
+
+### 3. 排序算法
+
+引用：[优雅的 JavaScript 排序算法](https://www.rayjune.me/2017/10/19/elegant-javascript-sorting-algorithm/)
+
+- `Bubble Sort` 冒泡排序
+
+  > 通过依次比较、交换相邻的元素（按照由小到大的顺序，如果符合这个顺序就不用交换），一次这样的循环可以得到一个最大值，n - 1 次这样的循环可以排序完毕。
+
+- `Selection Sort` 选择排序
+
+  > 每一次内循环遍历寻找最小的数，记录下 minIndex，并在这次内循环结束后交换 minIndex 和 i 的位置，重复这样的循环 n - 1 次即得到结果。
+
+- `Insertion Sort` 插入排序
+
+  > 默认 `a[0]` 为已排序数组中的元素，从 `arr[1]` 开始逐渐往已排序数组中插入元素，从后往前一个个比较，如果待插入元素小于已排序元素，则已排序元素往后移动一位，直到待插入元素找到合适的位置并插入已排序数组。经过 n - 1 次这样的循环插入后排序完毕。
+
+- `Shell Sort` 希尔排序
+
+  > 希尔排序是*插入排序的改进版*，它克服了插入排序只能移动一个相邻位置的缺陷（希尔排序可以一次移动 gap 个距离），利用了插入排序在排序几乎已经排序好的数组的非常快的优点。
+  > 使用可以动态定义的 gap 来渐进式排序，先排序距离较远的元素，再逐渐递进，而实际上排序中元素最终位置距离初始位置远的概率是很大的，所以希尔排序大大提升了性能（*尤其是 reverse 的时候非常快*，想象一下这时候冒泡排序和插入排序的速度）。
+
+- `Merge Sort` 归并排序
+
+  > 归并排序使用*分而治之*的思想，以*折半*的方式来*递归/迭代*排序元素，利用空间来换时间，做到了时间复杂度 O(n·log(n)) 的同时保持了排序元素的 stable，这让它在一些更考虑排序效率和稳定性，次考虑存储空间的场合非常适用（如数据库内排序，和堆排序相比，归并排序的 stable 是优点）。并且*归并排序非常适合于列表排序*。
+
+- `Heap Sort` 堆排序
+
+  > 堆排序可以认为是*选择排序的改进版*，像选择排序一样将输入划分为已排序和待排序，不一样的是堆排序*利用堆这种近似完全二叉树的良好的数据结构来实现排序*，本质上使用了*二分的思想*。先将所有的数据堆化，然后移动 arr[0] 到数组末尾（已排序区域），再重新堆化，依次这样循环来排序。
+
+- `Quick Sort` 快速排序
+
+  > 1. 从数列中挑出一个元素，称为”基准”（pivot），
+  > 2. 重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（相同的数可以到任何一边）。在这个分区结束之后，该基准就处于数列的中间位置。这个称为分区（partition）操作。
+  > 3. 递归地（recursively）把小于基准值元素的子数列和大于基准值元素的子数列排序。
+
+
+
+### 3.1 冒泡排序
 
 - 每次比较相邻的两个数，如果后一个比前一个小，换位置
 
@@ -1336,7 +1336,7 @@ return arr;
 console.log(bubbleSort(arr));
 ```
 
-### 4、快速排序
+### 3.2 快速排序
 
 - 采用二分法，取出中间数，数组每次和中间数比较，小的放到左边，大的放到右边
 
@@ -1367,48 +1367,103 @@ function quickSort(arr) {
 console.log(quickSort(arr));
 ```
 
-### 5、编写一个方法 求一个字符串的字节长度
+### 4、求一个字符串的字节长度
 
-- 假设：一个英文字符占用一个字节，一个中文字符占用两个字节    
+假设：一个英文字符占用一个字节，一个中文字符占用两个字节    
 
 ```javascript
 function GetBytes(str){
-
         var len = str.length;
-
         var bytes = len;
-
+    
         for(var i=0; i<len; i++){
-
             if (str.charCodeAt(i) > 255) bytes++;
-
         }
 
         return bytes;
-
     }
 
 alert(GetBytes("你好,as"));
 
 ```
-### 6、bind的用法，以及如何实现bind的函数和需要注意的点
+### 5、bind的用法，以及如何实现bind的函数和需要注意的点
 
-- `bind`的作用与`call`和`apply`相同，区别是`call`和`apply`是立即调用函数，而`bind`是返回了一个函数，需要调用的时候再执行。
+引用：[从一道面试题，到“我可能看了假源码”](https://www.jianshu.com/p/6958f99db769)
+
+`bind`的作用与`call`和`apply`相同，区别是`call`和`apply`是立即调用函数，而`bind`是返回了一个函数，需要调用的时候再执行。
+
 一个简单的`bind`函数实现如下
 
 ```javascript
-Function.prototype.bind = function(ctx) {
+Function.prototype.bind = function (context) {
     var fn = this;
-    return function() {
-        fn.apply(ctx, arguments);
-    };
-};
+    var argsArray = Array.prototype.slice.call(arguments);
+    return function () {
+        return fn.apply(context, argsArray.slice(1))
+    }
+}
 ```
 
 
-## $其他
 
-### 1、谈谈你对重构的理解
+
+
+## 5. 框架
+
+### VueJs
+
+
+
+### ReactJs
+
+```js
+React Component Render => JSX => React.createElement => Virtual Dom
+```
+
+
+
+#### 1. React Component 和 Element是什么？
+
+> 1. `React` 是一个构建视图层的类库(框架...whatever...)。不管 React 本身如何复杂，不管其生态如何庞大，**构建视图**始终是他的核心。
+
+> 2. `React Element` 元素是一个描述了 Dom Node 的对象。简单地说，React Element 描述了“你想”在屏幕上看到的事物。
+
+> 3. `React Component`是一个函数或者一个 Class（当然 Class 也是 function），它根据输入参数，并最终返回一个 React Element。
+>
+>    所以说，实际上我们使用了 React Component 来生成 React Element，这对于开发体验的提升无疑是巨大的。
+
+
+
+#### 2. 生命周期钩子
+
+
+
+#### 3. 组件间的通讯方式
+
+
+
+
+
+## 6. 其他
+
+
+
+### 1. 编程范式
+
+编程范式（programming paradigm），指的是计算机编程的基本风格或典范模式。
+
+Javascript是一门多范式 (multi-paradigm) 的编程语言。它即支持`命令式`(imperative) / `面向过程编程`(procedural
+)，也支持面`相对象编程`(OOP, Object-Oriented Programming)，还支持`函数式编程`(functional programming)。
+
+Javascript所支持的面相对象编程包括 `原型继承`(prototypal inheritance)。
+
+Javascript两大支柱：
+ - 原型OO
+ - 函数式编程
+
+
+
+### 2. 谈谈你对重构的理解
 
 - 网站重构：在不改变外部行为的前提下，简化结构、添加可读性，而在网站前端保持一致的行为。也就是说是在不改变UI的情况下，对网站进行优化， 在扩展的同时保持一致的UI
 - 对于传统的网站来说重构通常是：
@@ -1421,11 +1476,11 @@ Function.prototype.bind = function(ctx) {
 
   - 针对于`SEO`进行优化
   
-### 2、什么样的前端代码是好的
+### 3. 什么样的前端代码是好的
 
 - 高复用低耦合，这样文件小，好维护，而且好扩展。
 
-### 3、对前端工程师这个职位是怎么样理解的？它的前景会怎么样？
+### 4. 对前端工程师这个职位是怎么样理解的？它的前景会怎么样？
 
 
 - 前端是最贴近用户的程序员，比后端、数据库、产品经理、运营、安全都近
@@ -1440,7 +1495,7 @@ Function.prototype.bind = function(ctx) {
 
 - 做好的页面结构，页面重构和用户体验；
 
-### 4、你觉得前端工程的价值体现在哪
+### 5. 你觉得前端工程的价值体现在哪
 
 - 为简化用户使用提供技术支持（交互部分）
 
@@ -1453,7 +1508,7 @@ Function.prototype.bind = function(ctx) {
 - 为展示数据提供支持（数据接口）
 
 
-### 5、平时如何管理你的项目？
+### 6. 平时如何管理你的项目？
 - 先期团队必须确定好全局样式（`globe.css`），编码模式(`utf-8`) 等；
 
 - 编写习惯必须一致（例如都是采用继承式的写法，单样式都写成一行）；
@@ -1469,7 +1524,11 @@ Function.prototype.bind = function(ctx) {
 - 图片采用整合的 `images.png png8` 格式文件使用 - 尽量整合在一起使用方便将来的管理
 
 
-## 人事面
+
+
+
+
+## 7. 人事面
 
 
 - 面试完你还有什么问题要问的吗
@@ -1483,7 +1542,11 @@ Function.prototype.bind = function(ctx) {
 - 未来三到五年的规划是怎样的？
 
 
-## 常问
+
+
+
+
+## 8. 常问
 
 - 自我介绍
 - 你的项目中技术难点是什么？遇到了什么问题？你是怎么解决的？
