@@ -5,6 +5,9 @@ tags: 面试
 categories: Front-End
 ---
 
+参考：https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/master/Translations/Chinese/README.md
+
+
 # 目录
 
 [TOC]
@@ -182,7 +185,7 @@ FALLBACK:
 
 - 离线的情况下，浏览器就直接使用离线存储的资源。
 
-### 12、请描述一下 `cookies`，`sessionStorage` 和 `localStorage` 的区别？
+### 12、 cookie, sessionStorage 和 localStorage的区别？
 - `cookie`是网站为了标示用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）
 - cookie数据始终在同源的http请求中携带（即使不需要），记会在浏览器和服务器间来回传递
 - `sessionStorage`和`localStorage`不会自动把数据发给服务器，仅在本地保存
@@ -245,7 +248,7 @@ FALLBACK:
 ### 19、Canvas和SVG有什么区别？
 
 - `svg`绘制出来的每一个图形的元素都是独立的`DOM`节点，能够方便的绑定事件或用来修改。`canvas`输出的是一整幅画布
-- `svg`输出的图形是矢量图形，后期可以修改参数来自由放大缩小，不会是真和锯齿。而`canvas`输出标量画布，就像一张图片一样，放大会失真或者锯齿
+- `svg`输出的图形是矢量图形，后期可以修改参数来自由放大缩小，不会失真和锯齿。而`canvas`输出标量画布，就像一张图片一样，放大会失真或者锯齿
 
 ### 20、HTML5 为什么只需要写 <!DOCTYPE HTML>？
 
@@ -271,7 +274,13 @@ FALLBACK:
 
 ## 2. CSS部分
 
-### 1、css sprite是什么,有什么优缺点
+
+
+### 1. `reset.css` 和 `normalize.css` 有什么区别？你怎么选择？
+
+resetting 表示
+
+### 2. css sprite是什么,有什么优缺点
 
 - 概念：将多个小图片拼接到一个图片中。通过`background-position`和元素尺寸调节需要显示的背景图案。
 
@@ -287,9 +296,9 @@ FALLBACK:
   - 维护麻烦，修改一个图片可能需要从新布局整个图片，样式
 
 
-### 2、`display: none;`与`visibility: hidden;`的区别
+### 2、`display:none`与`visibility:hidden`的区别
 
-它们都能让元素不可见
+它们都能让元素不可见。
 
 - 区别：
 
@@ -309,10 +318,17 @@ FALLBACK:
 6. 总体来说：`link`优于`@import`
 
 
-### 4、什么是FOUC?如何避免
+### 4、什么是FOUC，如何避免？
 
-- `Flash Of Unstyled Content`：用户定义样式表加载之前浏览器使用默认样式显示文档，用户样式加载渲染之后再从新显示文档，造成页面闪烁。
-- **解决方法**：把样式表放到文档的`head`
+`Flash Of Unstyled Content` (无样式内容闪烁)：用户定义样式表加载之前浏览器使用默认样式显示文档，用户样式加载渲染之后再从新显示文档，造成页面闪烁。
+
+**解决方法**：把样式表放到文档的`head`
+
+
+### 13、说下你对BFC规范的理解？
+
+- 它决定了元素如何对其内容进行定位,以及与其他元素的关系和相互作用。
+
 
 ### 5、如何创建BFC(块级格式化上下文)，有什么用？
 
@@ -395,14 +411,31 @@ BFC是`Block Formatting Context` 的缩写，意为“块级格式化上下文�
 - `:disabled `      控制表单控件的禁用状态。
 - `:checked `       单选框或复选框被选中
 
-### 10、display有哪些值？说明他们的作用
+### 10、display有哪些值？
 
-- `block   `      象块类型元素一样显示。
-- `none    `      缺省值。象行内元素类型一样显示。
-- `inline-block ` 象行内元素一样显示，但其内容象块类型元素一样显示。
-- `list-item  `   象块类型元素一样显示，并添加样式列表标记。
-- `table  `       此元素会作为块级表格来显示
-- `inherit `      规定应该从父元素继承 `display` 属性的值
+大体分为：行内元素，块元素，类table，弹性盒子
+
+- `none` 隐藏对象。
+- `block` 象块类型元素一样显示。
+- `inline` 指定对象为内联元素。
+- `inline-block` 象行内元素一样显示，但其内容象块类型元素一样显示。
+- `list-item` 象块类型元素一样显示，并添加样式列表标记。
+- `table` 指定元素作为块级表格来显示
+- `box` 将对象作为弹性伸缩盒显示。（伸缩盒最老版本）
+- `flexbox` 将对象作为弹性伸缩盒显示。（伸缩盒过渡版本）
+- `flex` 将对象作为弹性伸缩盒显示。
+- `inherit` 规定应该从父元素继承 `display` 属性的值
+
+### 10.1 解释下`inline` 和 `inline-block`的区别？
+
+### 10.2 `display:inline-block` 什么时候不会显示间隙？(携程)
+
+- 移除空格
+- 使用`margin`负值
+- 使用`font-size:0`
+- `letter-spacing`
+- `word-spacing`
+- `vertical-align:middle`
 
 ### 11、介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？
 - 有两种， `IE `盒子模型、`W3C `盒子模型；
@@ -415,30 +448,18 @@ BFC是`Block Formatting Context` 的缩写，意为“块级格式化上下文�
 - 载入样式以最后载入的定位为准
 - 优先级为: `!important >  id > class > tag` `important` 比 内联优先级高
 
-### 13、对BFC规范的理解？
-
-- 它决定了元素如何对其内容进行定位,以及与其他元素的关系和相互作用
-
 ### 14、谈谈浮动和清除浮动
 
 - 浮动的框可以向左或向右移动，直到他的外边缘碰到包含框或另一个浮动框的边框为止。由于浮动框不在文档的普通流中，所以文档的普通流的块框表现得就像浮动框不存在一样。浮动的块框会漂浮在文档普通流的块框上
 
-### 15、position的值， relative和absolute定位原点是
+### 15、说说position的值及relative和absolute定位原点？
 - `absolute`：生成绝对定位的元素，相对于 `static` 定位以外的第一个父元素进行定位
 - `fixed`：生成绝对定位的元素，相对于浏览器窗口进行定位
 - `relative`：生成相对定位的元素，相对于其正常位置进行定位
 - `static` 默认值。没有定位，元素出现在正常的流中
 - `inherit` 规定从父元素继承 `position` 属性的值
 
-### 16、display:inline-block 什么时候不会显示间隙？(携程)
-
-- 移除空格
-- 使用`margin`负值
-- 使用`font-size:0`
-- `letter-spacing`
-- `word-spacing`
-
-### 17、PNG,GIF,JPG的区别及如何选
+### 17、PNG,GIF,JPG的区别及如何选？
 
 - `GIF`
   - `8`位像素，`256`色
@@ -460,16 +481,20 @@ BFC是`Block Formatting Context` 的缩写，意为“块级格式化上下文�
 
 ### 18、行内元素float:left后是否变为块级元素？
 
-- 浮动后，行内元素不会成为块状元素，但是可以设置宽高。行内元素要想变成块状元素，占一行，直接设置`display:block`;。但如果元素设置了浮动后再设置`display:block`;那就不会占一行。
+- 行内元素浮动后不会成为块状元素，但是可以设置宽高。
+- 行内元素要想变成块状元素，占一行，直接设置`display:block`。
+- 如果元素设置了浮动和`display:block`是不会占一行。
 
 ### 19、在网页中的应该使用奇数还是偶数的字体？为什么呢？
 
 - 偶数字号相对更容易和 web 设计的其他部分构成比例关系
 
-### 20、::before 和 :after中双冒号和单冒号 有什么区别？解释一下这2个伪元素的作用
+### 20、::before 和 :after中双冒号和单冒号 有什么区别？
 
-- 单冒号(`:`)用于CSS2伪类，双冒号(`::`)用于`CSS3`伪元素
-- 用于区分伪类和伪元素
+单冒号和双冒号用于区分伪类和伪元素
+
+> 单冒号(`:`)用于CSS2伪类，双冒号(`::`)用于`CSS3`伪元素
+
 
 ### 21、如果需要手动写动画，你认为最小时间间隔是多久，为什么？（阿里）
 
@@ -492,7 +517,7 @@ BFC是`Block Formatting Context` 的缩写，意为“块级格式化上下文�
 
 ### 24、列出你所知道可以改变页面布局的属性
 
-- `position`、`display`、`float`、`width`、`heigh`t、`margin`、`padding`、`top`、`left`、`right`、`
+- `position`、`display`、`float`、`width`、`height`、`margin`、`padding`、`top`、`left`、`right`
 
 ### 25、CSS在性能优化方面的实践
 
@@ -530,6 +555,29 @@ css3中有两个属性是可以直接影响到JS中的事件的，他们是`poin
   touch-action: none;
 }
 ```
+
+
+
+### 29. 如何修改chrome记住密码后自动填充表单的黄色背景 ？
+
+```css
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background-color: rgb(250, 255, 189); /* #FAFFBD; */
+  background-image: none;
+  color: rgb(0, 0, 0);
+}
+```
+
+
+
+### 31. 怎么让Chrome支持小于12px 的文字？
+
+1. 用图片：如果是内容固定不变情况下，使用将小于12px文字内容切出做图片，这样不影响兼容也不影响美观。
+2. 使用12px字体大小，建议设计师设计图稿时用不小于12px的字体。
+3. 继续使用小于12px字体大小样式设置：如果不考虑chrome可以不用考虑兼容，同时在设置小于12px对象设置-webkit-text-size-adjust:none，做到最大兼容考虑。
+4. 使用12px以上字体：为了兼容、为了代码更简单 从新考虑权重下兼容性。
+
+
 
 
 
@@ -1230,13 +1278,15 @@ var last=JSON.stringify(obj);
 - 异步：浏览器访问服务器请求，用户正常操作，浏览器后端进行请求。等请求完，页面不刷新，新内容也会出现，用户看到新内容
 
 
-### 41、渐进增强和优雅降级
+### 41、渐进增强和优雅降级有什么不同？
+
+渐进增强 (progressive enhancement) 和优雅降级 (graceful degradation) 
 
 - 渐进增强 ：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。
 
 - 优雅降级 ：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容
 
-### 42、defer和async
+### 42、`<script defer>`和`<script async>`的区别？
 
 - `defer`并行加载`js`文件，会按照页面上`script`标签的顺序执行
 - `async`并行加载`js`文件，下载完成立即执行，不会按照页面上`script`标签的顺序执行
@@ -1677,3 +1727,4 @@ Javascript两大支柱：
 - 平时是如何学习前端开发的？
 - 你最有成就感的一件事
 - 你是怎么学习前端的
+
