@@ -537,94 +537,152 @@ css3中有两个属性是可以直接影响到JS中的事件的，他们是`poin
 
 ## 3. JavaScript
 
-### 1、闭包
-- 闭包就是能够读取其他函数内部变量的函数
+### 1、闭包的理解及作用
 
-- 闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量,利用闭包可以突破作用链域
+引用： https://zhuanlan.zhihu.com/p/29157822
 
-- 闭包的特性：
+闭包是指有权访问另一个函数作用域中变量的函数。创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量，利用闭包可以突破作用链域。
 
-  - 函数内再嵌套函数
+**周全的解释：**
+
+> *由于在JS中，变量的作用域属于函数作用域，在函数执行后作用域就会被清理、内存也随之回收，但是由于闭包是建立在一个函数内部的子函数，由于其可访问上级作用域的原因，即使上级函数执行完，作用域也不会随之销毁，这时的子函数——也就是闭包，便拥有了访问上级作用域中的变量的权限，即使上级函数执行完后作用域内的值也不会被销毁。*
+
+**闭包的特性：**
+
+  - 函数内嵌套函数
   - 内部函数可以引用外层的参数和变量
   - 参数和变量不会被垃圾回收机制回收
 
-**说说你对闭包的理解**
+**闭包的用处：**
 
-- 使用闭包主要是为了设计私有的方法和变量。闭包的优点是可以避免全局变量的污染，缺点是闭包会常驻内存，会增大内存使用量，使用不当很容易造成内存泄露。在js中，函数即闭包，只有函数才会产生作用域的概念
+- 访问函数内部的变量，让这些变量始终保持在内存中
+- 封装对象的私有属性和私有方法
 
-- 闭包 的最大用处有两个，一个是可以读取函数内部的变量，另一个就是让这些变量始终保持在内存中
-- 闭包的另一个用处，是封装对象的私有属性和私有方法
+使用闭包主要是为了设计私有的方法和变量。闭包的优点是可以避免全局变量的污染，缺点是闭包会常驻内存，会增大内存使用量，使用不当很容易造成内存泄露。在js中，函数即闭包，只有函数才会产生作用域的概念。
 
-- **好处**：能够实现封装和缓存等；
-- **坏处**：就是消耗内存、不正当使用会造成内存溢出的问题
+**应用场景：**
 
-**使用闭包的注意点**
-- 由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露
-- 解决方法是，在退出函数之前，将不使用的局部变量全部删除
+- ajax请求成功的回调
+- 事件绑定的回调方法
+- setTimeout的延时回调
+- 一个函数内部返回另一个匿名函数
+
+
+
+
+**闭包的好处**：能够实现封装和缓存等
+
+**闭包的坏处**：就是消耗内存、不正当使用会造成内存溢出的问题
+
+
+**注意点：**
+
+由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。
+
+解决方法：在退出函数之前，将不使用的局部变量全部删除
 
 ### 2、说说你对作用域链的理解
 
 - 作用域链的作用是保证执行环境里有权访问的变量和函数是有序的，作用域链的变量只能向上访问，变量访问到`window`对象即被终止，作用域链向下访问变量是不被允许的
 - 简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期
 
-### 3、JavaScript原型，原型链 ? 有什么特点？
+
+
+
+### 3、谈谈This对象的理解
+
+- `this`总是指向函数的直接调用者（而非间接调用者）
+- 如果有`new`关键字，`this`指向`new`出来的那个对象
+- 在事件中，`this`指向触发这个事件的对象，特殊的是，`IE`中的`attachEvent`中的`this`总是指向全局对象`Window`
+
+
+
+### 4、JavaScript原型，原型链 ? 有什么特点？
 
 - 每个对象都会在其内部初始化一个属性，就是`prototype`(原型)，当我们访问一个对象的属性时
 - 如果这个对象内部不存在这个属性，那么他就会去`prototype`里找这个属性，这`个prototype`又会有自己的`prototype`，于是就这样一直找下去，也就是我们平时所说的原型链的概念
 - 关系：`instance.constructor.prototype = instance.__proto__`
 - 特点：
   - `JavaScript`对象是通过引用来传递的，我们创建的每个新对象实体中并没有一份属于自己的原型副本。当我们修改原型时，与之相关的对象也会继承这一改变
-  
--  当我们需要一个属性的时，`Javascript`引擎会先看当前对象中是否有这个属性， 如果没有的
--  就会查找他的`Prototype`对象是否有这个属性，如此递推下去，一直检索到 `Object` 内建对象
-
-### 4.1 请解释什么是事件代理
-
-事件代理（`Event Delegation`），又称之为事件委托。是 `JavaScript` 中常用绑定事件的常用技巧。顾名思义，“事件代理”即是把原本需要绑定的事件委托给父元素，让父元素担当事件监听的职务。事件代理的原理是DOM元素的事件冒泡。使用事件代理的好处是可以提高性能
-
-- 可以大量节省内存占用，减少事件注册，比如在`table`上代理所有`td`的`click`事件就非常棒 
-- 可以实现当新增子对象时无需再次对其绑定
-
-### 4.2 mouseover和mouseenter两个事件有什么区别？
-
-二者的区别是mouseenter不会冒泡（bubble）。
-
-**详细解释一下**
-
-当二者绑定的元素都没有子元素时，二者的行为是一致的。但是二者内部都包含子元素时，行为就不一样了。
-
-在mouseover绑定的元素中，鼠标每次进入一个子元素就会触发一次mouseover事件，而mouseenter只会触发一次。
+- 当我们需要一个属性的时，`Javascript`引擎会先看当前对象中是否有这个属性， 如果没有的
+- 就会查找他的`Prototype`对象是否有这个属性，如此递推下去，一直检索到 `Object` 内建对象
 
 
 
-### 4.3 移动端的click事件行为与PC端有什么不同？
+### 5、JS如何实现继承？
 
-移动端的click事件会延迟300ms触发事件回调（只在部分手机浏览器上出现）。
+- 构造继承
+- 原型继承
+- 实例继承
+- 拷贝继承
 
-因为手机浏览器中需要处理如翻页这样复杂的手势。在用户做翻页或双击放大等操作时，是先将手指触碰到屏幕（此时理应已经触发了click事件），然后再上下移动手指，浏览器开发厂商为了识别这种事件，所以加入了300ms延迟的处理。
+- 原型`prototype`机制或`apply`和`call`方法去实现较简单，建议使用构造函数与原型混合方式
 
-**解决方法**
-
-可以引入Fastclick.js来解决这个问题。它的原理是 FastClick 在检测到touchend事件的时候，会通过 DOM 自定义事件立即触发一个模拟click事件，并把浏览器在 300 毫秒之后真正触发的click事件阻止掉。
-
-
-
-### 4.4 移动端点击穿透的原理和解决方法？
-
-点击穿透是指在移动端，由于click事件延迟300ms触发，那么如果300ms内，页面显示变化（主要是指DOM的隐藏和显示）的话，会出现实际点击元素触发了touch事件，而300ms后该位置的实际元素又被再次触发了click事件的情况。
-
-**避免方法：**可以引入fastclick之类的插件来解决。
-
-
-
-
-### 4.5 Event对象中，target和currentTarget的区别？
-
-currentTarget是当事件遍历DOM时，标识事件的当前目标。它总是引用事件处理程序附加到的元素，而不是event.target，event.target标识事件发生的元素。
+```javascript
+/**
+ * 父类 Animal
+ */
+function Animal(options){
+	this.name = options.name
+}
+Animal.prototype.吃 = function(){}
+Animal.prototype.跑 = function(){}
 
 
+/**
+ * 子类 Cat
+ * Cat 继承 Animal
+ */
+function Cat(){
+	Animal.apply(this, arguments)
+	this.hobby = '捉老鼠'
+}
+/**
+ * 道格拉斯的object方法（等同于object.create方法）
+*/
+function object(o) {
+    var F = function () {}
+    F.prototype = o
+    return new F()
+}
 
-### 5、事件模型
+Cat.prototype = object(Animal.prototype)
+// 或者 使用 Object.create (ES5语法)
+// Cat.prototype = Object.create(Animal.prototype)
+Cat.prototype.constructor = Cat 	// 保证 Cat的constructor指向的正确
+Cat.prototype.喵 = function() {}
+
+
+// 实例化
+var cat_1 = new Cat({
+    name: '小喵...'
+})
+
+
+/*********************************************************
+cat_1.constructor === Cat						 // true
+cat_1.constructor === Animal					 // false
+cat_1.__proto__ === Cat.prototype				 // true
+cat_1.__proto__.__proto__ === Animal.prototype	  // true
+cat_1 instanceof Cat							// true
+cat_1 instanceof Animal							// true
+Cat.prototype.constructor === Cat				// true
+Cat.prototype.__proto__ === Animal.prototype	 // true
+*/
+```
+
+
+
+### 6、new操作符具体干了什么呢?
+
+- 创建一个空对象，并且 `this` 变量引用该对象，同时还继承了该函数的原型
+- 属性和方法被加入到 `this` 引用的对象中
+- 新创建的对象由 `this` 所引用，并且最后隐式的返回 `this`
+
+
+
+
+### 7、事件模型
 
 > `W3C`中定义事件的发生经历三个阶段：捕获阶段（`capturing`）、目标阶段（`targetin`）、冒泡阶段（`bubbling`）
 
@@ -644,44 +702,55 @@ currentTarget是当事件遍历DOM时，标识事件的当前目标。它总是�
 
 
 
-### 6、Javascript如何实现继承？
 
-- 构造继承
-- 原型继承
-- 实例继承
-- 拷贝继承
+### 8.1 请解释什么是事件代理？
 
-- 原型`prototype`机制或`apply`和`call`方法去实现较简单，建议使用构造函数与原型混合方式
+事件代理（`Event Delegation`），又称之为事件委托。是 `JavaScript` 中常用绑定事件的常用技巧。顾名思义，“事件代理”即是把原本需要绑定的事件委托给父元素，让父元素担当事件监听的职务。
 
-```javascript
- function Parent(){
-        this.name = 'wang';
-    }
+**原理**：利用DOM元素的事件冒泡机制。
 
-    function Child(){
-        this.age = 28;
-    }
-    Child.prototype = new Parent();//继承了Parent，通过原型
+**优点：**的好处是可以提高性能。
 
-    var demo = new Child();
-    alert(demo.age);
-    alert(demo.name);//得到被继承的属性
-  }
-```
+- 提高性能：可以大量节省内存占用，减少事件注册，比如在`table`上代理所有`td`的`click`事件；
+- 可以实现当新增子对象时无需再次对其绑定。
 
-### 7、谈谈This对象的理解
+### 8.2 mouseover和mouseenter两个事件有什么区别？
 
-- `this`总是指向函数的直接调用者（而非间接调用者）
-- 如果有`new`关键字，`this`指向`new`出来的那个对象
-- 在事件中，`this`指向触发这个事件的对象，特殊的是，`IE`中的`attachEvent`中的`this`总是指向全局对象`Window`
+二者的区别是：`mouseenter`不会冒泡（bubble）。
+
+**详细解释一下：**
+
+当二者绑定的元素都没有子元素时，二者的行为是一致的。但是二者内部都包含子元素时，行为就不一样了。
+
+在mouseover绑定的元素中，鼠标每次进入一个子元素就会触发一次mouseover事件，而mouseenter只会触发一次。
 
 
 
-### 8、new操作符具体干了什么呢?
+### 8.3 移动端的click事件行为与PC端有什么不同？
 
-- 创建一个空对象，并且 `this` 变量引用该对象，同时还继承了该函数的原型
-- 属性和方法被加入到 `this` 引用的对象中
-- 新创建的对象由 `this` 所引用，并且最后隐式的返回 `this`
+移动端的click事件会延迟300ms触发事件回调（只在部分手机浏览器上出现）。
+
+因为手机浏览器中需要处理如翻页这样复杂的手势。在用户做翻页或双击放大等操作时，是先将手指触碰到屏幕（此时理应已经触发了click事件），然后再上下移动手指，浏览器开发厂商为了识别这种事件，所以加入了300ms延迟的处理。
+
+**解决方法：**
+
+可以引入Fastclick.js来解决这个问题。它的原理是 FastClick 在检测到touchend事件的时候，会通过 DOM 自定义事件立即触发一个模拟click事件，并把浏览器在 300 毫秒之后真正触发的click事件阻止掉。
+
+### 8.4 移动端点击穿透的原因和解决方法？
+
+点击穿透是指在移动端，由于click事件延迟300ms触发，那么如果300ms内，页面显示变化（主要是指DOM的隐藏和显示）的话，会出现实际点击元素触发了touch事件，而300ms后该位置的实际元素又被再次触发了click事件的情况。
+
+**避免方法：**可以引入`fastclick`之类的插件来解决。
+
+### 8.5 实现 FastClick 的原理？
+
+`FastClick`  在检测到`touchend`事件的时候，会通过 DOM 自定义事件立即触发一个模拟click事件，并把浏览器在 300 毫秒之后真正触发的click事件阻止掉。
+
+### 8.6 Event对象中 target和currentTarget的区别？
+
+currentTarget是当事件遍历DOM时，标识事件的当前目标。它总是引用事件处理程序附加到的元素，而不是event.target，event.target标识事件发生的元素。
+
+
 
 ### 9、Ajax原理
 
@@ -859,7 +928,7 @@ padding:0;
 - `IE`下,`event`对象有`x`,`y`属性,但是没有`pageX`,`pageY`属性
 - `Firefox`下,`event`对象有`pageX`,`pageY`属性,但是没有`x,y`属性.
 
-### 22、说说你对promise的了解
+### 22、说说你对promise的了解？
 
 - 依照 `Promise/A+` 的定义，`Promise` 有四种状态：
   - `pending:` 初始状态, 非 `fulfilled` 或 `rejected.`
@@ -900,12 +969,42 @@ promise.then(onFulfilled, onRejected)
 - 接收两个函数作为参数，一个在 `fulfilled` 的时候被调用，一个在`rejected`的时候被调用，接收参数就是 `future`，`onFulfilled` 对应` resolve`, `onRejected `对应 `reject`
 
 
-### 23、你觉得jQuery源码有哪些写的好的地方
+### 23、jQuery源码有哪些写的好的地方？
 
 - `jquery`源码封装在一个匿名函数的自执行环境中，有助于防止变量的全局污染，然后通过传入`window`对象参数，可以使`window`对象作为局部变量使用，好处是当`jquery`中访问`window`对象的时候，就不用将作用域链退回到顶层作用域了，从而可以更快的访问window对象。同样，传入`undefined`参数，可以缩短查找`undefined`时的作用域链
 - `jquery`将一些原型属性和方法封装在了`jquery.prototype`中，为了缩短名称，又赋值给了`jquery.fn`，这是很形象的写法
 - 有一些数组或对象的方法经常能使用到，`jQuery`将其保存为局部变量以提高访问速度
 - `jquery`实现的链式调用可以节约代码，所返回的都是同一个对象，可以提高代码效率
+
+
+
+**jQuery 代码大体结构：**
+
+```js
+window.jQuery = function(selectorOrNodeOrWhatever){
+  if(! (this instanceof jQuery) ){
+    return new jQuery(selectorOrNodeOrWhatever)
+  }
+  this[0] = firstNode
+  this[1] = sencondNode
+  this.length = 2
+}
+window.jQuery.prototype = {
+  addClass: function(){},
+  removeClass: function(){},
+  text: function(){},
+  html: function(){},
+  其他 API 都是些简单的单词而已
+}
+
+window.jQuery.ajax = function({url, method, data}){
+  调用 XMLHttpRequest 发请求
+  返回一个 Promise
+}
+window.$ = window.jQuery
+```
+
+
 
 ### 24、vue、react、angular
 
@@ -989,7 +1088,7 @@ promise.then(onFulfilled, onRejected)
 
 ![](https://camo.githubusercontent.com/d1947e624a0444d1032a85800013df487adc5550/687474703a2f2f7777772e77337363686f6f6c2e636f6d2e636e2f692f63745f6a735f76616c75652e676966)
 
-### 33、javascript创建对象的几种方式？
+### 33、JS创建对象的几种方式？
 
 > `javascript`创建对象简单的说,无非就是使用内置对象或各种自定义对象，当然还可以用`JSON`；但写法有很多种，也能混合使用
 
@@ -1164,7 +1263,7 @@ var last=JSON.stringify(obj);
 - 箭头函数
 - `for-of`（用来遍历数据—例如数组中的值。）
 - `arguments`对象可被不定参数和默认参数完美代替。
-- `ES6`将p`romise`对象纳入规范，提供了原生的`Promise`对象。
+- `ES6`将`promise`对象纳入规范，提供了原生的`Promise`对象。
 - 增加了`let`和`const`命令，用来声明变量。
 - 增加了块级作用域。
 - `let`命令实际上就增加了块级作用域。
@@ -1206,6 +1305,29 @@ var last=JSON.stringify(obj);
 简单的概括下：JavaScript是单线程的，“主线程”负责执行所有的同步任务，一旦所有同步任务执行完成，则立即从“任务队列”中读取最优先的任务放到“主线程”中执行，如此循环往复。向“任务队列”插入的是一个个事件处理函数（确切的说是函数地址）或定时任务（setTimeout的回调）。
 
 
+
+### 51. 判断一个变量是否为数组
+
+1. `Array.isArray`
+2. `Object.prototype.toString.call`
+3. `arr instanceof Array`
+4. `arr.constructor === Array`
+
+方法 3和4是不确定的。
+
+
+
+### 52. 调用数组的哪些方法会改变原始数组
+
+- push
+- splice
+- shift
+- unshift
+- pop
+- sort
+- reverse
+- copyWithIn
+- fill
 
 
 
