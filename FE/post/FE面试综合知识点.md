@@ -5,7 +5,10 @@ tags: 面试
 categories: Front-End
 ---
 
-参考：https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/master/Translations/Chinese/README.md
+参考：
+- [端工作面试问题](https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/master/Translations/Chinese/README.md)
+- [我遇到的前端面试题2017](https://segmentfault.com/a/1190000011091907)
+- [一些回答不够好的前端面试题](https://jkchao.cn/article/5a784fc46c89ce0ff8dbfa36)
 
 
 # 目录
@@ -268,7 +271,10 @@ FALLBACK:
 - 有效防止黑客对某一个特定注册用户用特定程序暴力破解方式进行不断的登陆尝试
 
 
+### 42、`<script defer>`和`<script async>`的区别？
 
+- `defer`并行加载js文件，在HTML解析完之后才会执行，它会按照页面上script标签的顺序依次执行
+- `async`并行加载js文件，在加载完成后立即执行，不会按照页面上script标签的顺序执行
 
 
 
@@ -1268,7 +1274,11 @@ var last=JSON.stringify(obj);
 ```
 
 ### 39、js延迟加载的方式有哪些？
-- `defer`和`async`、动态创建`DOM`方式（用得最多）、按需异步载入`js`
+
+- `<script defer>`
+- `<script async>`
+- 动态创建`script`标签
+- 按需异步加载js
 
 
 ### 40、同步和异步的区别?
@@ -1286,10 +1296,6 @@ var last=JSON.stringify(obj);
 
 - 优雅降级 ：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容
 
-### 42、`<script defer>`和`<script async>`的区别？
-
-- `defer`并行加载`js`文件，会按照页面上`script`标签的顺序执行
-- `async`并行加载`js`文件，下载完成立即执行，不会按照页面上`script`标签的顺序执行
 
 ### 43、说说严格模式的限制
 
@@ -1378,6 +1384,18 @@ var last=JSON.stringify(obj);
 - reverse
 - copyWithIn
 - fill
+
+### 53. 浏览器的渲染机制
+
+1. 什么是回流(reflow)和重绘(repaint)
+2. 什么情况下会产生回流和重绘
+3. 如何避免发生回流和重绘
+4. 浏览器渲染原理及流程
+
+参考：
+- http://www.cnblogs.com/slly/p/6640761.html
+- http://34585f3f.wiz03.com/share/s/0Qm5Y_0RRQtc2F-3Zy2piy1K0E4QKp0IAQvZ2PEFvB08u3fM
+
 
 
 
