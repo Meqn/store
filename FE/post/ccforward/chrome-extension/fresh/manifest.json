@@ -1,0 +1,27 @@
+{
+   "manifest_version": 2,
+   "name": "Auto-Fresh",
+   "version": "1.0.0",
+   "description": "No F5.修改页面，自动刷新。",
+   "icons": {
+      "128": "images/rubik_128.png",
+      "16": "images/rubik_16.png",
+      "48": "images/rubik_48.png",
+      "64": "images/rubik_64.png"
+   },
+   "browser_action": {
+      "default_icon": "images/rubik_icon.png",
+      "default_popup": "popup.html",
+      "default_title": "TMD 我不要去按F5"
+   },
+
+   "content_scripts": [ {
+      "js": ["content_script.js"],
+      "matches": [ "http://*/*" ],
+      "run_at": "document_end"
+   } ],
+   
+   "content_security_policy": "script-src 'self' http:// ; object-src 'self'",
+
+   "permissions": ["background", "management", "tabs", "http://*/*", "https://*/*" ]
+}

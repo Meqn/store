@@ -1,0 +1,27 @@
+html,body {
+    background-color: #333;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.wrap {
+    width: 990px;
+    height: 100%;
+    margin: 1px auto;
+}
+.wrap .title {
+    color: #fff;
+    text-align: center;
+    color: #f60;
+    font-size: 30px;
+}
+.wrap .block {
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+    border: 1px solid #fff;
+    background-color: #9c0;
+}

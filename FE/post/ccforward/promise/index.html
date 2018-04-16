@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise测试</title>
+</head>
+<body>
+    
+<script src="promise.js"></script>
+<script>
+
+    function start () {
+        console.log('start');
+        return new Promise().resolve();
+    }
+
+    function test1() {
+        console.log('test1');
+    }
+
+    function sleep1() {
+        var p = new Promise();
+
+        setTimeout( function(){
+            console.log('sleep1');
+            p.resolve();
+        }, 2000);
+
+        return p;
+    }
+
+    function test2() {
+        console.log('test2');
+    }
+
+    function sleep2() {
+        var p = new Promise();
+
+        setTimeout( function(){
+            console.log('sleep2');
+            p.resolve();
+        }, 300);
+
+        return p;
+    }
+
+    function test3() {
+        console.log('test3');
+        var x = 1;
+        for(var i=0;i<10;i++){
+            setTimeout(function(){
+                x++;
+                console.log(x)
+            },3000)
+        }
+    }
+    function sleep3() {
+        var p = new Promise();
+        setTimeout( function(){
+            console.log('sleep3');
+            p.resolve();
+        }, 400);
+        return p;
+        
+    }
+
+ start().then( test1, null )
+        .then( sleep1(), null )
+        .then( test2, null )
+        // .then( sleep2(), null )
+        // .then( test3, null )
+        // .then( sleep3(), null );
+
+</script>
+</body>
+</html>

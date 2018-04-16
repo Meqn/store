@@ -1,0 +1,23 @@
+{
+  "name": "date-calc",
+  "version": "1.0.1",
+  "description": "a simple date calculator for javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ccforward/date-calc"
+  },
+  "keywords": [
+    "date",
+    "Date",
+    "date calculate"
+  ],
+  "author": "cc <ccking@foxmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.16.0"
+  }
+}
