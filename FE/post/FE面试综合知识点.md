@@ -7,6 +7,7 @@ categories: Front-End
 
 参考：
 - [端工作面试问题](https://github.com/h5bp/Front-end-Developer-Interview-Questions/blob/master/Translations/Chinese/README.md)
+- [前端小白半年准备进BAT](https://github.com/brickspert/blog/issues/16)
 - [我遇到的前端面试题2017](https://segmentfault.com/a/1190000011091907)
 - [一些回答不够好的前端面试题](https://jkchao.cn/article/5a784fc46c89ce0ff8dbfa36)
 
