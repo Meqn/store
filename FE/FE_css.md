@@ -17,53 +17,12 @@ display, float, position
 
 ### 1. 水平垂直居中
 
-```css
-/** 1. Flex
- */
-.wrap{
-	display: flex;
-	justify-content: center;
-	align-content: center;
+常用的4种方法： [点击查看Demo](https://codepen.io/mengqing/pen/Ryarwm)
 
-	.center{}
-}
-/** 2. 定位
- * 子元素宽高固定，可使用 margin 负值
- */
-.wrap{
-	position: relative;
-
-	.center{
-		position: absolute; top: 50%; left: 50%;
-		transform: translate(-50%, -50%);
-	}
-}
-/** 3. table-cell
- */
-.wrap{
-	display: table-cell;
-	text-align: center; vertical-align: middle;
-
-	.center{
-		display: inline-block;
-	}
-}
-/** 4. vertical-align: middle
- */
-.wrap{
-	font-size: 0;
-	text-align: center;
-
-	&::before{
-		content: "";
-		display: inline-block; vertical-align: middle;
-		width: 0; height: 100%;
-	}
-	.center{
-		display: inline-block; vertical-align: middle;
-	}
-}
-```
+1. flex
+2. postion + transform
+3. `display:table-cell`
+4. `display:inline-block` + `vertical-align: middle`
 
 
 
