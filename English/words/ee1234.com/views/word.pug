@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  ul
+    li
+      a(href="/word") 单词
+    li
+      a(href="/word/prefix") 获取前缀列表
+    li
+      a(href="/word") 获取词根列表
+    li
+      a(href="/word/suffix") 获取后缀列表
+  
+  div #{pageContent}
+  
