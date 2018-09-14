@@ -1,0 +1,87 @@
+/* 中英文字段 */
+/**
+ * 中文优先使用冬青黑体简体(OS X)、微软雅黑(Windows)和文泉驿微米黑(Linux)
+ * 西文使用 tahoma
+ * 1. 防止元素中「font-family」不能继承
+ * 2. 西文字体和 OS X 字体写在前面
+ * 3. Opera 12.1 之前版本不支持中文字体的英文名称
+ * 4. 微软雅黑「\5FAE\8F6F\96C5\9ED1」,中易宋体「\5B8B\4F53」
+ */
+$fontFamily: Chinese Quote, -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", Helvetica Neue, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+
+
+
+/* placeholder 颜色*/
+input::-webkit-input-placeholder{color:#999;}
+input::-moz-input-placeholder{color:#999;}
+input::-ms-input-placeholder{color:#999;}
+
+/* 选择文本 */
+::-moz-selection {
+  background-color: #b3d4fc;
+  color: #000000;
+}
+::selection {
+  background-color: #b3d4fc;
+  color: #000000;
+}
+
+/* 去除表单默认样式 */
+button, input, select, textarea{
+  -webkit-appearance: none;
+}
+/* 去掉 android 语音输入按钮 */
+input::-webkit-input-speech-button {
+  display: none
+}
+/* 被点击时产生的边框或半透明灰色背景 */
+a, button, input{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* 禁止长按时触发系统的菜单 */
+a, img{
+  -webkit-touch-callout: none;
+}
+/* 禁止用户选中文本 */
+html, body{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 移动端去除type为number的箭头 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+/**
+1. iOS 滚动回弹特效
+-webkit-overflow-scrolling: touch;
+*/
+
+
+
+
+
+
+body {
+  font-family: $fontFamily;
+  color:#262626;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color:#fff;
+  /* 字体在移动端比例缩小后出现锯齿的问题 */
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased
+}
+
+a {
+  transition:color .3s
+}
+a:hover, a:active {
+  //
+}
+

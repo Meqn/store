@@ -1,0 +1,54 @@
+/* 清除浮动 */
+.clearfix {
+  zoom:1
+}
+.clearfix:after, .clearfix:before {
+  content:"";
+  display:table
+}
+.clearfix:after {
+  clear:both
+}
+
+.clear{
+  clear: both;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+}
+
+
+/**
+* 文字溢出显示省略号
+* 1. Opera 9-10.6
+* 2. Chrome 21+ bug https://bugs.webkit.org/show_bug.cgi?id=121902
+*/
+.ellipsis {
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+    -o-text-overflow: ellipsis; /* 1 */
+    text-overflow: ellipsis;
+    text-align: left; /* 2 */
+}
+
+/* 强制文本换行 */
+.textwrap, .textwrap td, .textwrap th {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+/**
+ * 统一用双线显示人民币符号「&yen;(￥)」
+ */
+.rmb,
+.yuan {
+    font-family: arial;
+    font-style: normal;
+}
+
+
+
+
+
+

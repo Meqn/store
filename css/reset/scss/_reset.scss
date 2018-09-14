@@ -1,0 +1,297 @@
+/* 中英文字段 */
+/**
+ * 中文优先使用冬青黑体简体(OS X)、微软雅黑(Windows)和文泉驿微米黑(Linux)
+ * 西文使用 tahoma
+ * 1. 防止元素中「font-family」不能继承
+ * 2. 西文字体和 OS X 字体写在前面
+ * 3. Opera 12.1 之前版本不支持中文字体的英文名称
+ * 4. 微软雅黑「\5FAE\8F6F\96C5\9ED1」,中易宋体「\5B8B\4F53」
+ */
+$fontFamily: Chinese Quote, -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", Helvetica Neue, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+
+
+
+/**
+ * 1. Add border box sizing in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent font size adjustments after orientation changes in IE and iOS.
+ */
+html {
+  /* 1 */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 2 */
+  line-height: 1.15;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/* 重置各个浏览器的内外边距 */
+body, dl, dd, /* dt, 默认没边距 */
+ul, ol, /*li, 默认没边距 */
+h1, h2, h3, h4, h5, h6, pre, /* code, 默认没边距 */
+form, fieldset, legend, input, textarea, optgroup,
+p, blockquote, figure, hr, menu,
+thead, tbody, tfoot, th, td /* th, td 默认 padding:1px */
+{
+  margin:0;
+  padding:0;
+}
+
+/* 去掉各Table cell 的边距并让其边重合 */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption, th {
+  text-align: left;
+}
+
+
+/**
+ * Add the correct display in IE 9-.
+ */
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display:block
+}
+
+
+/* 去掉列表前的标识, li 会继承，大部分网站通常用列表来很多内容，所以应该当去 */
+ul, ol {
+  list-style: none;
+}
+
+
+/* 来自 yahoo, 让标题都自定义, 适应多个系统应用 */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+
+
+
+/**
+ * 所有 font-family 小写，存在空格的字体名加单引号
+ * @default-font: 'helvetica neue', tahoma, \5B8B\4F53, sans-serif;
+ * @heading-font: 'helvetica neue', tahoma, 'hiragino sans gb', stheiti,
+    \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, 'wenquanyi micro hei', sans-serif;
+ * @code-font: monaco, menlo, consolas, monospace;
+ */
+
+
+
+/* Text-level semantics
+  ========================================================================== */
+
+/**
+ * 去除链接默认的下划线，提高文字可读性
+ */
+a {
+    text-decoration: none;
+}
+/**
+* 去掉 IE 10+ 点击链接时的灰色背景
+*/
+a:active {
+  background-color: transparent;
+}
+
+/**
+ * 去掉点击时的焦点框，同时保证使用键盘可以显示焦点框
+ */
+a:active, a:hover {
+  outline: 0 none;
+}
+
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b, strong {
+  font-weight: bold;
+}
+/* 一致的 del 样式 */
+del {
+	text-decoration: line-through;
+}
+
+/* 统一上标和下标 */
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+  vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/* 标记，类似于手写的荧光笔的作用 */
+mark {
+	background: #ff0;
+	color:#000;
+}
+
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+
+
+/* media content
+  ========================================================================== */
+
+/**
+ * 1. 修正未定义为「inline-block」的元素
+ * 2. 修正 Chrome、Firefox、Opera 中 「progress」元素 vertical-align 默认值不一致
+ */
+audio, video, canvas, svg {
+	display: inline-block; /* 1 */
+	vertical-align: middle; /* 2 */
+}
+/**
+ * 1.防止现代浏览器将没有「controls」属性的 「audio」元素显示出来
+ * 2.去掉 iOS 5 中多余的高度
+ */
+audio:not([controls]) {
+    display: none; /* 1 */
+    height: 0; /* 2 */
+}
+
+
+/**
+ * 1. 去除 IE6-9 和 Firefox 3 中 a 内部 img 元素默认的边框
+ * 2. 修正 IE8 图片消失bug
+ * 3. 防止 img 指定「height」时图片高度不能按照宽度等比缩放，导致图片变形
+      http://jsbin.com/aJoTUca/2
+ * 4. 让图片支持响应式
+ * 5. 去除现代浏览器图片底部的空隙
+ * 6. 修复 IE7 图片缩放失真
+ */
+img {
+    border: 0 none; /* 1 */
+    width: auto\9; /* 2 */
+    height: auto; /* 3 */
+    max-width: 100%; /* 4 */
+    vertical-align: middle;/* 5 */
+    -ms-interpolation-mode: bicubic; /* 6 */
+}
+
+
+
+/** 表单 form
+**************************************************************************************/
+
+/**
+ * 1. 修正所有浏览器中字体/字号不继承的问题
+ * 2. 修正 Firefox 3+， Safari5 和 Chrome 中外边距不同的问题
+ * 3. 改善在所有浏览器下的垂直对齐方式
+ */
+button, input, select, textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 3 */
+  vertical-align: baseline; /* 4 */
+  *vertical-align: middle; /* 4 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * 1. 修正 Safari 5 和 Chrome 中「appearance」被设置为「searchfield」的问题
+ * 2. 修正 Safari 5 和 Chrome 中「box-sizing」被设置为 「border-box」的问题
+ */
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * 1. 移除 IE6-11 中默认的垂直滚动条
+ * 2. 禁止拖动，防止破坏布局
+ */
+textarea {
+  overflow: auto; /* 1 */
+  resize: none; /* 2 */
+}
+
+
+/* 去掉IE10input右侧的删除和小眼睛，防止与搜索icon重叠 */
+input::-ms-clear {
+  display: none;
+}
+input::-ms-reveal {
+  display: none;
+}
+
+
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template, [hidden] {
+  display: none;
+}
+
