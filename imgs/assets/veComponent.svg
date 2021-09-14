@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="420px" height="420px" viewBox="0 0 420 420" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 57 (83077) - https://sketch.com -->
-    <title>切片</title>
-    <desc>Created with Sketch.</desc>
-    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="蓝" transform="translate(35.000000, 10.000000)">
-            <path d="M175,0 L350,102.054622 L350,297.917029 L175,399.974436 L0,297.917029 L0,102.054622 L175,0 Z M175,35.0508711 L31.0650888,119.745221 L31.0650888,280.226137 L175,364.924398 L318.934911,280.226137 L318.934911,119.745221 L175,35.0508711 Z" id="矩形备份" fill="#478EFF" fill-rule="nonzero"></path>
-            <polygon id="路径-2备份-3" fill="#EBF5FF" points="31.0650888 119.745221 175 221.633776 318.934911 119.745221 175 35.0508711"></polygon>
-            <polygon id="路径-2备份-4" fill="#D9ECFF" points="175 364.924398 175 221.633776 318.934911 119.745221 318.934911 280.230048"></polygon>
-            <polygon id="路径-2备份-5" fill="#FFFFFF" points="175 364.924398 175 221.633776 31.0650888 119.74131 31.0650888 280.226137"></polygon>
-            <polygon id="路径备份" fill="#1670FF" fill-rule="nonzero" points="223.668639 148.443087 175 235.105581 126.331361 148.443087 160.502959 148.443087 175 173.254295 189.497041 148.443087"></polygon>
-            <polygon id="路径备份-2" fill="#478EFF" fill-rule="nonzero" points="126.331361 148.443087 175 235.105581 223.668639 148.443087 257.840237 148.443087 176.70858 294.824465 173.29142 294.824465 92.1597633 148.443087"></polygon>
-        </g>
-    </g>
+<svg width="420" height="420" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="M210 10l175 102.055v195.862L210 409.974 35 307.917V112.055L210 10zm0 35.05L66.065 129.746v160.481L210 374.924l143.935-84.698v-160.48L210 45.05z"
+    fill="#478EFF" fill-rule="nonzero" />
+  <path fill="#EBF5FF" d="M66.065 129.745L210 231.634l143.935-101.889L210 45.051z" />
+  <path fill="#D9ECFF" d="M210 374.924v-143.29l143.935-101.889V290.23z" />
+  <path fill="#FFF" d="M210 374.924v-143.29L66.065 129.741v160.485z" />
+  <path fill="#1670FF" fill-rule="nonzero"
+    d="M258.669 158.443L210 245.106l-48.669-86.663h34.172L210 183.254l14.497-24.811z" />
+  <path fill="#478EFF" fill-rule="nonzero"
+    d="M161.331 158.443L210 245.106l48.669-86.663h34.171l-81.131 146.381h-3.418L127.16 158.443z" />
 </svg>
