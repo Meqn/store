@@ -8,5 +8,6 @@
 3. Markdown写作工具 `Typora`，配置：`偏好设置->图像->上传服务`，可自动/手动上传。
 
 
-> 本仓库图片访问地址：//cdn.jsdelivr.net/gh/Meqn/store/imgs/图片路径
+> 本仓库图片访问地址：//cdn.jsdelivr.net/gh/Meqn/store/imgs/图片路径  
+> 该地址也可访问: `https://fastly.jsdelivr.net/npm/meqn/store/imgs/`
 
